@@ -16,16 +16,16 @@
 
 //* Brad's
 
-//1.
-//2.
-//3.
-//4.
-//5.
-//6.
-//7.
-//8.
-//9.
-//10.
+//1.{ title: "Pronounced 'Lĕh-'nérd 'Skin-'nérd",  artist: " Lynyrd Skynyrd", genreId: "classic rock", ownerCount: 0, releaseDate: 1973, imgSrc: "https://upload.wikimedia.org/wikipedia/en/thumb/c/c2/BobMarley-Legend.jpg/220px-BobMarley-Legend.jpg", createdAt: new Date(), updatedAt: new Date()},
+//2.{ title: "Dynasty",  artist: "Kiss", genreId: 'classic rock', ownerCount: 0, releaseDate: 1979, imgSrc: "https://upload.wikimedia.org/wikipedia/en/thumb/b/b6/Dynasty_%28album%29_cover.jpg/220px-Dynasty_%28album%29_cover.jpg", createdAt: new Date(), updatedAt: new Date()},
+//3.{ title: "Southern Nights",  artist: "Glen Campbell", genreId: 'country', ownerCount: 0, releaseDate: 1977, imgSrc: "https://upload.wikimedia.org/wikipedia/en/f/fc/Glen_Campbell_Southern_Nights_album_cover.jpg", createdAt: new Date(), updatedAt: new Date()},
+//4.{ title: "Metallica",  artist: "Metallica", genreId: 'rock', ownerCount: 0, releaseDate: 1991, imgSrc: "https://upload.wikimedia.org/wikipedia/en/thumb/2/2c/Metallica_-_Metallica_cover.jpg/220px-Metallica_-_Metallica_cover.jpg", createdAt: new Date(), updatedAt: new Date()},
+//5.{ title: "Rumours",  artist: "Fleetwood Mac", genreId: 'classic rock', ownerCount: 0, releaseDate: 1977, imgSrc: "https://upload.wikimedia.org/wikipedia/en/thumb/f/fb/FMacRumours.PNG/220px-FMacRumours.PNG", createdAt: new Date(), updatedAt: new Date()},
+//6.{ title: "Wish You Were Here",  artist: "Pink Floyd", genreId: 'classic rock', ownerCount: 0, releaseDate: 1975, imgSrc: "https://upload.wikimedia.org/wikipedia/en/thumb/a/a4/Pink_Floyd%2C_Wish_You_Were_Here_%281975%29.png/220px-Pink_Floyd%2C_Wish_You_Were_Here_%281975%29.png", createdAt: new Date(), updatedAt: new Date()},
+//7.{ title: "Cut",  artist: "Golden Earring", genreId: "classic rock", ownerCount: 0, releaseDate: 1982, imgSrc: "https://upload.wikimedia.org/wikipedia/en/thumb/d/d2/Golden_Earring_-_Cut.jpg/220px-Golden_Earring_-_Cut.jpg", createdAt: new Date(), updatedAt: new Date()},
+//8.{ title: "What You See Is What You Get",  artist: "Luke Combs", genreId: 'country', ownerCount: 0, releaseDate: #, imgSrc: "https://upload.wikimedia.org/wikipedia/en/thumb/e/e3/Luke_Combs_-_What_You_See_Is_What_You_Get.png/220px-Luke_Combs_-_What_You_See_Is_What_You_Get.png", createdAt: new Date(), updatedAt: new Date()},
+//9.{ title: "In Utero",  artist: "Nirvana", genreId: "rock", ownerCount: 0, releaseDate: 1993, imgSrc: "https://upload.wikimedia.org/wikipedia/en/thumb/e/e5/In_Utero_%28Nirvana%29_album_cover.jpg/220px-In_Utero_%28Nirvana%29_album_cover.jpg", createdAt: new Date(), updatedAt: new Date()},
+//10.{ title: "Born Here Live Here Die Here",  artist: "Luke Bryan", genreId: "country", ownerCount: 0, releaseDate: 2020, imgSrc: "https://upload.wikimedia.org/wikipedia/en/thumb/8/84/Born_Here_Live_Here_Die_Here.jpeg/220px-Born_Here_Live_Here_Die_Here.jpeg", createdAt: new Date(), updatedAt: new Date()},
 
 //* Christian's
 
