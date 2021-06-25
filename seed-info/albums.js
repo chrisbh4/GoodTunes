@@ -4,7 +4,7 @@
 
 //* Monte's
 
-//1. { title: "Legend",  artist: "Bob Marley and the Wailers", genreId: #, ownerCount: 0, releaseDate: 1984, imgSrc: "https://upload.wikimedia.org/wikipedia/en/thumb/c/c2/BobMarley-Legend.jpg/220px-BobMarley-Legend.jpg", createdAt: new Date(), updatedAt: new Date()},
+//1. { title: "Legend",  artist: "Bob Marley and the Wailers", genreId: 'reggae', ownerCount: 0, releaseDate: 1984, imgSrc: "https://upload.wikimedia.org/wikipedia/en/thumb/c/c2/BobMarley-Legend.jpg/220px-BobMarley-Legend.jpg", createdAt: new Date(), updatedAt: new Date()},
 //2.
 //3.
 //4.
