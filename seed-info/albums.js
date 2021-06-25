@@ -1,5 +1,6 @@
 // { title: "Title",  artist: "Artist", genreId: #, ownerCount: 0, releaseDate: #, imgSrc: "link", createdAt: new Date(), updatedAt: new Date()},
-
+//TODO: Seed Genres first, then Albums, then Songs
+//TODO: Make sure to add Genre ID # to Albums data after Genre seed.
 
 //* Monte's
 
