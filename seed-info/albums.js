@@ -31,6 +31,7 @@
 
 //* Christian's
 
+
 //1.{ title: "The College Dropout" artist: "Kanye West" , genreId: 'Hip-Hop', ownerCount: 0 , releaseDate: 2004 , imgSrc: "https://upload.wikimedia.org/wikipedia/en/thumb/a/a3/Kanyewest_collegedropout.jpg/220px-Kanyewest_collegedropout.jpg", createdAt: new Date(), updatedAt: new Date() },
 //2.{ title , "HNDRXX", artist: "Future" , genreId: "Hip-Hop" , ownerCount: 0 , releaseDate : 2017 , imgSrc:"https://upload.wikimedia.org/wikipedia/en/thumb/8/83/HNDRXX_cover.jpg/220px-HNDRXX_cover.jpg", createdAt: new Date() , updatedAt: new Date() },
 //3.{ title: "The Blueprint",  artist: "Jay-Z", genreId: "Hip-Hop" , ownerCount: 0, releaseDate: 2001 , imgSrc: "https://upload.wikimedia.org/wikipedia/en/thumb/2/2c/The_Blueprint.png/220px-The_Blueprint.png", createdAt: new Date(), updatedAt: new Date()},
