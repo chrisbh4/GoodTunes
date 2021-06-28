@@ -37,16 +37,12 @@ const userValidators = [
 ]
 
 router.get('/signup', csrfProtection, (req, res) => {
-  res.render('sign-up', { csrfToken: req.csrfToken() })
+  res.render('sign-up', { csrfToken: req.csrfToken(), title: 'Sign-Up' })
 })
-/* GET users listing. */
+
 router.post('/signup', csrfProtection, userValidators, asyncHandler(async (req, res, next) => {
   const { username, password } = req.body
-
-  const hashedPw = hashedPassword(password, 10)
-
   const user = User.build({ username })
-
   const validatorErrors = validationResult(req)
 
   if (validatorErrors.isEmpty()) {
@@ -54,7 +50,7 @@ router.post('/signup', csrfProtection, userValidators, asyncHandler(async (req, 
     user.hashedPassword = hashedPassword;
     await user.save();
     //TODO loginUser
-    res.redirect('/users/signup')
+    res.redirect('/users/signup') //TODO redirect to ('/')
   } else {
     const errors = validatorErrors.array().map((error) => error.msg);
     res.render('user-register', {
@@ -66,4 +62,36 @@ router.post('/signup', csrfProtection, userValidators, asyncHandler(async (req, 
   }
 }));
 
+router.get('/login', csrfProtection, (req, res) => {
+  res.render("login", {csrfToken: req.csrfToken(), title: 'Log In'})
+})
+
+const loginValidators = [
+  check('username')
+    .exists({ checkFalsy: true })
+    .withMessage('Please provide a value for username'),
+  check('password')
+    .exists({ checkFalsy: true })
+    .withMessage('Please provide a value for password'),
+]
+
+router.post('/login', csrfProtection, loginValidators, asyncHandler(async(req, res, next) => {
+  const { username, password } = req.body
+  let errors = []
+  const validatorErrors = validationResult(req)
+  if (validatorErrors.isEmpty()) {
+    const user = await User.findOne({ where: { username }})
+    if (user !== null) {
+      const isPassword = await bcrypt.compare(password, user.hashedPassword.toString())
+        if (isPassword) {
+        //TODO: Login User function
+        return res.redirect('/')
+      }
+  }
+  errors.push("Log in failed for the provided username and password")
+} else {
+  errors = validatorErrors.array().map(error => error.msg)
+}
+res.render('login', {title: 'Log in', username, errors, csrfToken: req.csrfToken()})
+}))
 module.exports = router;
