@@ -4,7 +4,7 @@ module.exports = (sequelize, DataTypes) => {
     name: DataTypes.STRING
   }, {});
   Genre.associate = function(models) {
-    // associations can be defined here
+    Genre.hasMany(models.Album, {foreignKey: 'genreId'})
   };
   return Genre;
 };
