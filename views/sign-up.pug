@@ -1,0 +1,16 @@
+extends non-user-layout.pug
+
+block content
+    form(action="/users/signup" method="post")
+        input(type="hidden" name="_csrf" value=csrfToken)
+        div
+            label(for="username") Username
+            input(type="text" name="username" required)
+        div
+            label(for="password") Password
+            input(type="text" name="password" required)
+        div
+            label(for="confirmPassword") Confirm Password
+            input(type="text" name="confirmPassword" required)
+        div
+            button(type="submit") Sign Up
