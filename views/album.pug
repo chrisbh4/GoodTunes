@@ -8,4 +8,16 @@ block content
         h3=`Genre: ${album.Genre.name}`
     div(class='releaseDate')
         h3=`Release Date: ${album.releaseDate}`
-    
+    //- div(class='reviews')
+    //-     table
+    //-         thead
+    //-             tr
+    //-                 th UserName
+    //-                 th Comment
+    //-                 th Rating
+    //-         tbody
+    //-             each review in reviews
+    //-                 tr
+    //-                     td=`${review.User.name}`
+    //-                     td=`${review.comment}`
+    //-                     td=`${review.rating}`
