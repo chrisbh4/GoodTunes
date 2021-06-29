@@ -1,3 +1,15 @@
-window.addEventListener("load", (event)=>{
-    console.log("hello from javascript!")
+
+
+window.addEventListener("DOMContentLoaded", (event)=>{
+
+  const logout = document.querySelector('.navbar-logout')
+
+  logout.addEventListener("submit" , (event) => {
+      
+  })
+
+
+
+
+
 })

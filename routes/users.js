@@ -88,7 +88,7 @@ router.post('/login', csrfProtection, loginValidators, asyncHandler(async(req, r
       const isPassword = await bcrypt.compare(password, user.hashedPassword.toString())
         if (isPassword) {
         loginUser( req , res , user);
-        return res.redirect('/')
+        return req.session.save( () => res.redirect('/'))
       }
   }
   errors.push("Log in failed for the provided username and password")
@@ -104,8 +104,8 @@ router.get('/layout', requireAuth, ( req , res )=>{
 
 router.post('/logout', (req , res )=>{
   logoutUser(req, res );
+  req.session.save( () => res.redirect('/users/login'))
   req.session.destroy()
-  res.redirect('/users/login');
 })
 
 module.exports = router;
