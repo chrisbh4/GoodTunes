@@ -13,7 +13,7 @@ router.get('/', asyncHandler(async (req, res) => {
     res.render('all-albums', { albums })
 }))
 
-router.get('/:id', asyncHandler(async (req, res) => {
+router.get('/:id(\\d+)', asyncHandler(async (req, res) => {
     const id = req.params.id
     const album = await Album.findByPk(id, {
         include: Genre
