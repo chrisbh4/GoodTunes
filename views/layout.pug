@@ -1,0 +1,17 @@
+html
+  head
+    meta(charset="utf-8")
+    title GoodTunes - #{title}
+    link(rel='stylesheet' href='/stylesheets/reset.css')
+  body
+    nav(class='navbar')
+      a(class='logo' href='/') GoodTunes
+        if locals.authenticated
+          span(class='navbar-text') Welcome #{user.username}
+          form(class="navbar-logout" action='/users/logout' method='post')
+            button(class='logout-button' type='submit') Logout
+        else
+          span(class='navbar-text')
+            a(class="login-button" href='/users/login') Login
+            a(class="signup-button" href='/users/signup') Sign Up
+    block content

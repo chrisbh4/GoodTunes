@@ -99,7 +99,7 @@ res.render('login', {title: 'Log in', username, errors, csrfToken: req.csrfToken
 }))
 
 router.get('/layout', requireAuth, ( req , res )=>{
-  res.render('user-layout')
+  res.render('layout')
 });
 
 router.post('/logout', (req , res )=>{
