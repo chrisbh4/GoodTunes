@@ -8,10 +8,10 @@ module.exports = (sequelize, DataTypes) => {
     releaseDate: DataTypes.INTEGER,
     imgSrc: DataTypes.TEXT
   }, {});
-  Album.associate = function(models) {
+  Album.associate = function (models) {
     // associations can be defined here
-    Album.belongsTo(models.Genre, {foreignKey: 'genreId'})
-    Album.hasMany(models.Song, {foreignKey: 'albumId'})
+    Album.belongsTo(models.Genre, { foreignKey: 'genreId' })
+    Album.hasMany(models.Song, { foreignKey: 'albumId' })
     Album.belongsToMany(models.Shelf, {
       through: 'AlbumList',
       foreignKey: 'albumId',
@@ -22,6 +22,7 @@ module.exports = (sequelize, DataTypes) => {
       foreignKey: 'albumId',
       otherKey: 'userId'
     })
+    Album.hasMany(models.Review, { foreignKey: 'albumId' })
   };
   return Album;
 };

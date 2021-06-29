@@ -1,0 +1,18 @@
+extends layout.pug
+block content
+    table
+        thead
+            tr
+                th Image
+                th Title
+                th Artist
+                th Release Date
+                th Genre
+        tbody
+            each album in albums
+                tr
+                    td: img(src=`${album.imgSrc}`)
+                    td: a(href=`/albums/${album.id}`) #{album.title}
+                    td= `${album.artist}`
+                    td= `${album.releaseDate}`
+                    td= `${album.Genre.name}`
