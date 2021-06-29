@@ -7,10 +7,6 @@ const { check, validationResult } = require('express-validator');
 const { User, Shelf } = db
 const { loginUser, logoutUser, requireAuth} = require('../auth')
 
-const hashedPassword = async (password, salt) => {
-  const hash = await bcrypt.hash(password, salt)
-  return hash
-};
 
 const userValidators = [
   check('username')
