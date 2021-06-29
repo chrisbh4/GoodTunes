@@ -4,16 +4,18 @@ module.exports = (sequelize, DataTypes) => {
     comment: DataTypes.STRING,
     rating: {
       type: DataTypes.INTEGER,
-      validate:{
-        min:0,
-        max:10
+      validate: {
+        min: 0,
+        max: 10
       }
     },
     albumId: DataTypes.INTEGER,
     userId: DataTypes.INTEGER
   }, {});
-  Review.associate = function(models) {
+  Review.associate = function (models) {
     // associations can be defined here
+    Review.belongsTo(models.User, { foreignKey: 'userId' })
+    Review.belongsTo(models.Album, { foreignKey: 'albumId' })
   };
   return Review;
 };

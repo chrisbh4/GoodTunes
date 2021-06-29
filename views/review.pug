@@ -1,0 +1,14 @@
+extends layout.pug
+block content
+    h1=`Add a review for: ${album.title} by ${album.artist}`
+    img(src=`${album.imgSrc}`)
+    form(action=`/reviews/albums/${album.id}` method='post')
+        input(type="hidden" name='_csrf' value=csrfToken)
+        div(class='comment')
+            label(for="comment") Comment:
+            textarea(name="comment" maxlength='255' required)
+        div(class='rating')
+            label(for='rating') Rating 1/10:
+            input(type='number' name='rating')
+        div(class='reviewButton')
+            button(type='submit') Submit
