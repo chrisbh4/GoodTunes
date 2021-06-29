@@ -8,3 +8,28 @@ block content
     ul
     each shelf in shelves
         li: a(href=`/shelves/${shelf.id}`) #{shelf.name}
+    div(class='reviews')
+        table
+            thead
+                tr
+                    th Album
+                    th Artist
+                    th Comment
+                    th Rating
+            tbody
+                each review in reviews
+                    tr
+                        td= `${review.Album.title}`
+                        td= `${review.Album.artist}`
+                        td= `${review.comment}`
+                        td= `${review.rating}`
+                        td
+                            form(action=`/reviews/edits/${review.id}` method='post')
+                                input(type="hidden" name="_csrf" value= csrfToken)
+                                input(type="text" name="comment" value=`${review.comment}`)
+                                input(type="number" name="rating" value=`${review.rating}`)
+                                button(type="submit") Save
+                        td
+                            form(action=`/reviews/delete/${review.id}` method='post')
+                                input(type="hidden" name="_csrf" value= csrfToken)
+                                button(type="submit") Delete

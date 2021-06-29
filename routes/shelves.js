@@ -5,7 +5,7 @@ const { csrfProtection, asyncHandler } = require('./utils');
 const { check, validationResult } = require('express-validator');
 const { loginUser, logoutUser, requireAuth } = require('../auth');
 const user = require('../db/models/user');
-const { User, Shelf } = db;
+const { User, Shelf, Review, Album } = db;
 
 /*
 [] create a get route to return all shelves for a single user
@@ -32,12 +32,19 @@ Path: shelves/user:id/
 
 router.get('/users/:id(\\d+)', csrfProtection, asyncHandler(async (req, res) => {
     const userId = parseInt(req.params.id, 10)
-
+    const reviews = await Review.findAll({
+        where: {
+            userId
+        },
+        include: Album
+    })
+      console.log(reviews)
     // Grabs all of the logged in user's Shelves
     const shelves = await Shelf.findAll({ where: { userId } })
     res.render('shelves-detail', {
         shelves,
         userId,
+        reviews,
         csrfToken: req.csrfToken()
     })
 }))
@@ -94,6 +101,16 @@ router.post('/:id(\\d+)', csrfProtection, asyncHandler(async(req, res )=>{
   await shelf.destroy()
     res.redirect(`/shelves/users/${shelf.User.id}`)
 }));
+
+router.post('/update/:id(\\d+)', csrfProtection, asyncHandler(async(req, res)=>{
+    const id = req.params.id
+    const shelf = await Shelf.findByPk(id, {
+        include: User
+    })
+    shelf.name = req.body.name
+    await shelf.save()
+    res.redirect(`/shelves/users/${shelf.User.id}`)
+}))
 
 
 module.exports = router

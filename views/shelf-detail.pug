@@ -1,9 +1,11 @@
 extends layout.pug
 block content
     h3 #{shelf.name}
-    form(action=`/shelves/${shelf.id}` method="put")
+    form(action=`/shelves/update/${shelf.id}` method="post")
         input(type="hidden" name="_csrf" value= csrfToken)
-        button(type="submit") Edit
+        label(for="name") New Name
+        input(type="text" name="name")
+        button(type="submit") Save
     form(action=`/shelves/${shelf.id}` method="post" )
         input(type="hidden" name="_csrf" value= csrfToken)
         button(type="submit") Delete

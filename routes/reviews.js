@@ -21,6 +21,23 @@ router.post('/albums/:id(\\d+)', csrfProtection, asyncHandler(async (req, res) =
     res.redirect(`/albums/${albumId}`)
 }))
 
+router.post('/edits/:id(\\d+)', csrfProtection, asyncHandler(async (req, res) => {
+    const id = req.params.id
+    const { comment, rating } = req.body
+    console.log(comment, rating)
+    const review = await Review.findByPk(id)
+    review.comment = comment
+    review.rating = rating
+    await review.save()
+    res.redirect(`/shelves/users/${review.userId}`)
+}))
+
+router.post('/delete/:id(\\d+)', csrfProtection, asyncHandler(async (req, res) => {
+    const id = req.params.id
+    const review = await Review.findByPk(id)
+    await review.destroy()
+    res.redirect(`/shelves/users/${review.userId}`)
+}))
 
 
 module.exports = router;
