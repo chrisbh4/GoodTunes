@@ -4,7 +4,7 @@ const bcrypt = require('bcryptjs');
 const db = require('../db/models');
 const { csrfProtection, asyncHandler } = require('./utils');
 const { check, validationResult } = require('express-validator');
-const { User } = db
+const { User, Shelf } = db
 const { loginUser, logoutUser, requireAuth} = require('../auth')
 
 const hashedPassword = async (password, salt) => {
@@ -49,8 +49,10 @@ router.post('/signup', csrfProtection, userValidators, asyncHandler(async (req, 
     const hashedPassword = await bcrypt.hash(password, 10);
     user.hashedPassword = hashedPassword;
     await user.save();
-    loginUser( req, res , user);
 
+    loginUser( req, res , user);
+    const id = user.id
+    await Shelf.create({ name: 'MyShelf', userId: id})
     res.redirect('/')
   } else {
     const errors = validatorErrors.array().map((error) => error.msg);
@@ -86,7 +88,7 @@ router.post('/login', csrfProtection, loginValidators, asyncHandler(async(req, r
       const isPassword = await bcrypt.compare(password, user.hashedPassword.toString())
         if (isPassword) {
         loginUser( req , res , user);
-        return res.redirect('/users/layout')
+        return res.redirect('/')
       }
   }
   errors.push("Log in failed for the provided username and password")
@@ -96,7 +98,7 @@ router.post('/login', csrfProtection, loginValidators, asyncHandler(async(req, r
 res.render('login', {title: 'Log in', username, errors, csrfToken: req.csrfToken()})
 }))
 
-router.get('/layout', requireAuth , ( req , res )=>{
+router.get('/layout', requireAuth, ( req , res )=>{
   res.render('user-layout')
 });
 
