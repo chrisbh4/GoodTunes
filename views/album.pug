@@ -1,4 +1,11 @@
 extends layout.pug
 block content
     div(class='albumTitle')
-        h1= album.title
+        h1= `${album.title} by ${album.artist}`
+    div(class='albumImg')
+        img(src=album.imgSrc)
+    div(class='genre')
+        h3=`Genre: ${album.Genre.name}`
+    div(class='releaseDate')
+        h3=`Release Date: ${album.releaseDate}`
+    
