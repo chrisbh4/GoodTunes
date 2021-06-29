@@ -1,0 +1,9 @@
+extends layout.pug
+block content
+    h3 #{shelf.name}
+    form(action=`/shelves/${shelf.id}` method="put")
+        input(type="hidden" name="_csrf" value= csrfToken)
+        button(type="submit") Edit
+    form(action=`/shelves/${shelf.id}` method="post" )
+        input(type="hidden" name="_csrf" value= csrfToken)
+        button(type="submit") Delete

@@ -1,0 +1,10 @@
+extends layout.pug
+block content
+    form(method="post" action=`/shelves/users/${userId}`)
+        input(type="hidden" name="_csrf" value= csrfToken)
+        lable Shelf Name:
+        input(type="text" name="name")
+        button(type="submit") Create Shelf
+    ul
+    each shelf in shelves
+        li: a(href=`/shelves/${shelf.id}`) #{shelf.name}

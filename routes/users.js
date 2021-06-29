@@ -4,8 +4,9 @@ const bcrypt = require('bcryptjs');
 const db = require('../db/models');
 const { csrfProtection, asyncHandler } = require('./utils');
 const { check, validationResult } = require('express-validator');
-const { User, Shelf } = db
-const { loginUser, logoutUser, requireAuth } = require('../auth')
+const { User, Shelf } = db;
+const { loginUser, logoutUser, requireAuth} = require('../auth')
+
 
 
 const userValidators = [
