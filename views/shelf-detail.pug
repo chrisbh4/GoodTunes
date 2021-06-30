@@ -1,4 +1,7 @@
 extends layout.pug
+block scripts
+    script(src='../public/javascripts/shelfDetail.js')
+
 block content
     h3 #{shelf.name}
     form(action=`/shelves/update/${shelf.id}` method="post")
@@ -20,7 +23,9 @@ block content
         tbody
             each album in albumList
                 tr
-                    td: img(src=`${album.Album.imgSrc}`)
+                    td
+                        a(href=`/albums/${album.Album.id}`)
+                            img(src=`${album.Album.imgSrc}`)
                     td: a(href=`/albums/${album.Album.id}`) #{album.Album.title}
                     td= `${album.Album.artist}`
                     td= `${album.Album.releaseDate}`

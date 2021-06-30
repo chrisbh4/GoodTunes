@@ -53,7 +53,8 @@ router.post('/signup', csrfProtection, userValidators, asyncHandler(async (req, 
     res.redirect('/')
   } else {
     const errors = validatorErrors.array().map((error) => error.msg);
-    res.render('user-register', {
+    console.log(errors)
+    res.render('sign-up', {
       title: 'Register',
       user,
       errors,         //TODO display error messages in pug file
@@ -100,9 +101,9 @@ router.get('/layout', requireAuth, (req, res) => {
 });
 
 router.post('/logout', (req, res) => {
+  console.log("inside logout route")
   logoutUser(req, res);
   req.session.save(() => res.redirect('/users/login'))
-  req.session.destroy()
 })
 
 module.exports = router;

@@ -1,13 +1,18 @@
 extends layout.pug
 
 block content
+    if errors
+        div
+            ul
+                each error in errors
+                    li=error
     form(action="/users/login" method="post")
         input(type="hidden" name="_csrf" value=csrfToken)
         div
             label(for="username") Username
-            input(type="text" name="username" required)
+            input(type="text" name="username" )
         div
             label(for="password") Password
-            input(type="text" name="password" required)
+            input(type="text" name="password" )
         div
             button(type="submit") Log In

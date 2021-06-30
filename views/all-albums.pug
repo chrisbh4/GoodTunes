@@ -19,7 +19,9 @@ block content
                                 each shelf in shelves
                                     option( name='shelf' value=`${shelf.id}`)= `${shelf.name}`
                             button(type='submit' class='AddSubmit') Add
-                    td: img(src=`${album.imgSrc}`)
+                    td
+                        a(href=`/albums/${album.id}`)
+                            img(src=`${album.imgSrc}`)
                     td: a(href=`/albums/${album.id}`) #{album.title}
                     td= `${album.artist}`
                     td= `${album.releaseDate}`

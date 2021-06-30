@@ -6,6 +6,7 @@ const { User, Review, Album, Song, Genre, Shelf } = db
 const { requireAuth } = require('../auth')
 
 router.get('/', csrfProtection, asyncHandler(async (req, res) => {
+    console.log("some messeage")
     const { userId } = req.session.auth
     const albums = await Album.findAll({
         include: Genre,
