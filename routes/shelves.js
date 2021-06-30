@@ -31,6 +31,7 @@ Path: shelves/user:id/
 // Make sure the user can only access its own shelves and not anyone else's in the database
 
 router.get('/users/:id(\\d+)', csrfProtection, asyncHandler(async (req, res) => {
+    console.log("inside users id")
     const userId = parseInt(req.params.id, 10)
     const reviews = await Review.findAll({
         where: {

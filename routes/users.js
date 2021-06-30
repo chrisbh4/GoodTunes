@@ -106,4 +106,10 @@ router.post('/logout', (req, res) => {
   req.session.save(() => res.redirect('/users/login'))
 })
 
+router.post('/demo', asyncHandler( async(req, res) => {
+  const user = await User.findOne({ where: { username: 'demo' } })
+  loginUser(req, res, user);
+  return req.session.save(() => res.redirect('/'))
+}))
+
 module.exports = router;

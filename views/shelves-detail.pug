@@ -1,4 +1,6 @@
 extends layout.pug
+block scripts
+    script(type='module' src='/javascripts/shelvesDetail.js')
 block content
     form(method="post" action=`/shelves/users/${userId}`)
         input(type="hidden" name="_csrf" value= csrfToken)

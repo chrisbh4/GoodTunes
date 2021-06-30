@@ -1,6 +1,6 @@
 window.addEventListener("DOMContentLoaded", (event)=>{
-console.log('domcontentloaded')
 
+console.log("works")
 
 
 

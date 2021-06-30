@@ -9,15 +9,16 @@ html
       a(class='logo' href='/') GoodTunes
       form(class='albums-page' action='/albums/' method='get')
         button(class='albums-page-button' type='submit') Go to all albums
-        if locals.authenticated
-          span(class='navbar-text') Welcome #{user.username}
-          form(class="navbar-logout" action='/users/logout' method='post')
-            button(class='logout-button' type='submit') Logout
-          form(class='my-page' action=`/shelves/users/${user.id}` method='get')
-            button(class='my-page-button' type='submit') Go to your page
-        else
-          span(class='navbar-text')
-            a(class="login-button" href='/users/login') Login
-            a(class="signup-button" href='/users/signup') Sign Up
-            a(class='demo-button' href='/users/signup') Take A Tour
+      if locals.authenticated
+        span(class='navbar-text') Welcome #{user.username}
+        form(class="navbar-logout" action='/users/logout' method='post')
+          input(class='logout-button' type='submit' value='logout')
+        form(class='my-page' action=`/shelves/users/${user.id}` method='get')
+          button(class='my-page-button' type='submit') Go to your page
+      else
+        span(class='navbar-text')
+          a(class="login-button" href='/users/login') Login
+          a(class="signup-button" href='/users/signup') Sign Up
+          form(method='post' action='/users/demo')
+            button(type='submit') Take a Tour
     block content
