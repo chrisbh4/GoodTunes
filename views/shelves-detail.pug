@@ -2,12 +2,12 @@ extends layout.pug
 block scripts
     script(type='module' src='/javascripts/shelvesDetail.js')
 block content
-    form(method="post" action=`/shelves/users/${userId}`)
+    form( class='createShelfForm' id=`${userId}`)
         input(type="hidden" name="_csrf" value= csrfToken)
-        lable Shelf Name:
-        input(type="text" name="name")
-        button(type="submit") Create Shelf
-    ul
+        label(class='shelfNameLabel') Shelf Name:
+        input(type="text" name="name" class='shelfNameInput')
+        button(type="submit" class='shelfNameButton') Create Shelf
+    ul(class='shelvesList')
     each shelf in shelves
         li: a(href=`/shelves/${shelf.id}`) #{shelf.name}
     div(class='reviews')
@@ -35,3 +35,5 @@ block content
                             form(action=`/reviews/delete/${review.id}` method='post')
                                 input(type="hidden" name="_csrf" value= csrfToken)
                                 button(type="submit") Delete
+
+//- method="post" action=`/shelves/users/${userId}`

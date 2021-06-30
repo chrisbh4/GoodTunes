@@ -54,32 +54,13 @@ router.get('/users/:id(\\d+)', csrfProtection, asyncHandler(async (req, res) => 
 
 router.post('/users/:id(\\d+)', csrfProtection, asyncHandler(async (req, res, next) => {
     const userId = parseInt(req.params.id, 10)
-    const { name } = req.body
-
+    const name = req.body.name
     await Shelf.create({
         name,
         userId
     });
-
-    //     const validatorErrors = validationResult(req);
-    //         if(validatorErrors.isEmpty()){
-    //             await shelf.save()
-    //             res.redirect(`/shelves/${userId}`, {
-    //             })
-    //         }
-
-    // res.render('/shelves-detail', {
-    //     csrfToken: req.csrfToken(),
-
-    // })
-   //  next()
-
-    // res.render('shelves-detail',{
-    //     csrfToken: req.csrfToken(),
-
-    // })
-
-    res.redirect(`/shelves/users/${userId}`)
+    const shelves = await Shelf.findAll({ where: { userId } })
+    res.json({ shelves })
 
 }))
 
