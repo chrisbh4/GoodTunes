@@ -9,7 +9,9 @@ block content
         button(type="submit" class='shelfNameButton') Create Shelf
     ul(class='shelvesList')
         each shelf in shelves
-            li: a(href=`/shelves/${shelf.id}`) #{shelf.name}
+            div(class=`shelf-${shelf.id}`)
+                li: a(href=`/shelves/${shelf.id}`) #{shelf.name}
+                button(class=`deleteShelfButton` id=`${shelf.id}`) Delete
     div(class='reviews')
         table
             thead

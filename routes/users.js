@@ -5,7 +5,7 @@ const db = require('../db/models');
 const { csrfProtection, asyncHandler } = require('./utils');
 const { check, validationResult } = require('express-validator');
 const { User, Shelf } = db;
-const { loginUser, logoutUser, requireAuth} = require('../auth')
+const { loginUser, logoutUser, requireAuth } = require('../auth')
 
 
 
@@ -53,7 +53,6 @@ router.post('/signup', csrfProtection, userValidators, asyncHandler(async (req, 
     res.redirect('/')
   } else {
     const errors = validatorErrors.array().map((error) => error.msg);
-    console.log(errors)
     res.render('sign-up', {
       title: 'Register',
       user,
@@ -101,12 +100,11 @@ router.get('/layout', requireAuth, (req, res) => {
 });
 
 router.post('/logout', (req, res) => {
-  console.log("inside logout route")
   logoutUser(req, res);
   req.session.save(() => res.redirect('/users/login'))
 })
 
-router.post('/demo', asyncHandler( async(req, res) => {
+router.post('/demo', asyncHandler(async (req, res) => {
   const user = await User.findOne({ where: { username: 'demo' } })
   loginUser(req, res, user);
   return req.session.save(() => res.redirect('/'))

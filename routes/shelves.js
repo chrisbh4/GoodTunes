@@ -83,13 +83,15 @@ router.get('/:id(\\d+)', csrfProtection, asyncHandler(async (req, res) => {
 
 }));
 
-router.post('/:id(\\d+)', csrfProtection, asyncHandler(async (req, res) => {
+router.delete('/:id(\\d+)', asyncHandler(async (req, res) => {
+    console.log('IN DELETE ROUTE')
     const id = req.params.id
     const shelf = await Shelf.findByPk(id, {
         include: User
     })
     await shelf.destroy()
-    res.redirect(`/shelves/users/${shelf.User.id}`)
+    const shelves = await Shelf.findAll()
+    res.json({ shelves })
 }));
 
 router.post('/update/:id(\\d+)', csrfProtection, asyncHandler(async (req, res) => {
