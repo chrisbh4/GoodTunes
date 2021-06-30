@@ -3,15 +3,11 @@ block scripts
     script(type='module' src='/javascripts/shelfDetail.js')
 
 block content
-    h3 #{shelf.name}
-    form(action=`/shelves/update/${shelf.id}` method="post")
-        input(type="hidden" name="_csrf" value= csrfToken)
+    h3(class="shelfName") #{shelf.name}
+    form(class="updateForm"  id=`${shelf.id}`)
         label(for="name") New Name
-        input(type="text" name="name")
-        button(type="submit") Save
-    form(action=`/shelves/${shelf.id}` method="post" )
-        input(type="hidden" name="_csrf" value= csrfToken)
-        button(type="submit") Delete
+        input(type="text" name="name" class="updateInput")
+        button(type="submit" class="updateButton") Save
     table
         thead
             tr

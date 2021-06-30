@@ -94,15 +94,16 @@ router.delete('/:id(\\d+)', asyncHandler(async (req, res) => {
     res.json({ shelves })
 }));
 
-router.post('/update/:id(\\d+)', csrfProtection, asyncHandler(async (req, res) => {
+router.patch('/update/:id(\\d+)', asyncHandler(async (req, res) => {
+    console.log('Hitting Route')
     const id = req.params.id
     const shelf = await Shelf.findByPk(id, {
         include: User
     })
     shelf.name = req.body.name
     await shelf.save()
-    res.redirect(`/shelves/users/${shelf.User.id}`)
-}))
+    res.json({ shelf: shelf.name })
+}));
 
 router.post('/own/:id(\\d+)', csrfProtection, asyncHandler(async (req, res) => {
     const id = req.params.id
