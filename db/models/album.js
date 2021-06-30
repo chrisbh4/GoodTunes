@@ -4,7 +4,12 @@ module.exports = (sequelize, DataTypes) => {
     title: DataTypes.STRING,
     artist: DataTypes.STRING,
     genreId: DataTypes.INTEGER,
-    ownerCount: DataTypes.INTEGER,
+    ownerCount: {
+      type: DataTypes.INTEGER,
+      validate: {
+        min: 0
+      }
+    },
     releaseDate: DataTypes.INTEGER,
     imgSrc: DataTypes.TEXT
   }, {});
