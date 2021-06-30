@@ -8,8 +8,8 @@ block content
         input(type="text" name="name" class='shelfNameInput')
         button(type="submit" class='shelfNameButton') Create Shelf
     ul(class='shelvesList')
-    each shelf in shelves
-        li: a(href=`/shelves/${shelf.id}`) #{shelf.name}
+        each shelf in shelves
+            li: a(href=`/shelves/${shelf.id}`) #{shelf.name}
     div(class='reviews')
         table
             thead

@@ -39,7 +39,7 @@ router.get('/users/:id(\\d+)', csrfProtection, asyncHandler(async (req, res) => 
         },
         include: Album
     })
-      console.log(reviews)
+    console.log(reviews)
     // Grabs all of the logged in user's Shelves
     const shelves = await Shelf.findAll({ where: { userId } })
     res.render('shelves-detail', {
@@ -52,7 +52,8 @@ router.get('/users/:id(\\d+)', csrfProtection, asyncHandler(async (req, res) => 
 
 
 
-router.post('/users/:id(\\d+)', csrfProtection, asyncHandler(async (req, res, next) => {
+router.post('/users/:id(\\d+)', asyncHandler(async (req, res, next) => {
+    console.log('in route!')
     const userId = parseInt(req.params.id, 10)
     const name = req.body.name
     await Shelf.create({
@@ -64,11 +65,11 @@ router.post('/users/:id(\\d+)', csrfProtection, asyncHandler(async (req, res, ne
 
 }))
 
-router.get('/:id(\\d+)', csrfProtection ,asyncHandler(async (req, res )=>{
+router.get('/:id(\\d+)', csrfProtection, asyncHandler(async (req, res) => {
     const id = req.params.id
     const shelf = await Shelf.findByPk(id)
     const albumList = await AlbumList.findAll({
-        where:{
+        where: {
             shelfId: id
         },
         include: Album
@@ -82,16 +83,16 @@ router.get('/:id(\\d+)', csrfProtection ,asyncHandler(async (req, res )=>{
 
 }));
 
-router.post('/:id(\\d+)', csrfProtection, asyncHandler(async(req, res )=>{
+router.post('/:id(\\d+)', csrfProtection, asyncHandler(async (req, res) => {
     const id = req.params.id
-    const shelf = await Shelf.findByPk(id,{
+    const shelf = await Shelf.findByPk(id, {
         include: User
     })
-  await shelf.destroy()
+    await shelf.destroy()
     res.redirect(`/shelves/users/${shelf.User.id}`)
 }));
 
-router.post('/update/:id(\\d+)', csrfProtection, asyncHandler(async(req, res)=>{
+router.post('/update/:id(\\d+)', csrfProtection, asyncHandler(async (req, res) => {
     const id = req.params.id
     const shelf = await Shelf.findByPk(id, {
         include: User
@@ -101,18 +102,18 @@ router.post('/update/:id(\\d+)', csrfProtection, asyncHandler(async(req, res)=>{
     res.redirect(`/shelves/users/${shelf.User.id}`)
 }))
 
-router.post('/own/:id(\\d+)', csrfProtection, asyncHandler(async(req, res)=>{
+router.post('/own/:id(\\d+)', csrfProtection, asyncHandler(async (req, res) => {
     const id = req.params.id
-    const {shelfId} = req.body
+    const { shelfId } = req.body
     console.log(shelfId)
-    await AlbumList.create({shelfId: shelfId, albumId: id})
+    await AlbumList.create({ shelfId: shelfId, albumId: id })
     const album = await Album.findByPk(id)
     album.ownerCount++
     album.save()
     res.redirect('/albums/')
 }))
 
-router.post('/remove/:id(\\d+)', csrfProtection, asyncHandler(async(req, res)=>{
+router.post('/remove/:id(\\d+)', csrfProtection, asyncHandler(async (req, res) => {
     const id = req.params.id
     const albumList = await AlbumList.findByPk(id)
     const shelfId = albumList.shelfId
@@ -123,7 +124,7 @@ router.post('/remove/:id(\\d+)', csrfProtection, asyncHandler(async(req, res)=>{
     res.redirect(`/shelves/${shelfId}`)
 }))
 
-router.post('/listenedTo/:id(\\d+)', csrfProtection, asyncHandler(async(req, res)=>{
+router.post('/listenedTo/:id(\\d+)', csrfProtection, asyncHandler(async (req, res) => {
     const id = req.params.id
     const albumList = await AlbumList.findByPk(id)
     const shelfId = albumList.shelfId
