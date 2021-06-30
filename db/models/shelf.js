@@ -11,6 +11,7 @@ module.exports = (sequelize, DataTypes) => {
       foreignKey: 'shelfId',
       otherKey: 'albumId'
     })
+    Shelf.hasMany(models.AlbumList, {foreignKey: "shelfId"})
   };
   return Shelf;
 };

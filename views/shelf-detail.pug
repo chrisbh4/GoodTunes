@@ -9,3 +9,31 @@ block content
     form(action=`/shelves/${shelf.id}` method="post" )
         input(type="hidden" name="_csrf" value= csrfToken)
         button(type="submit") Delete
+    table
+        thead
+            tr
+                th Image
+                th Title
+                th Artist
+                th Release Date
+                th Listened To
+        tbody
+            each album in albumList
+                tr
+                    td: img(src=`${album.Album.imgSrc}`)
+                    td: a(href=`/albums/${album.Album.id}`) #{album.Album.title}
+                    td= `${album.Album.artist}`
+                    td= `${album.Album.releaseDate}`
+                    td
+                        form(action=`/shelves/remove/${album.id}` method='post')
+                            input(type="hidden" name="_csrf" value= csrfToken)
+                            button(type='submit') remove
+                    td
+                        if !album.listenedTo
+                            form(action=`/shelves/listenedTo/${album.id}` method=`post`)
+                                input(type="hidden" name="_csrf" value= csrfToken)
+                                label(for='listenedTo') listened To
+                                input(type='checkbox' name='listenedTo' value=true unchecked)
+                                button(type='submit') save
+                        else
+                            p listened

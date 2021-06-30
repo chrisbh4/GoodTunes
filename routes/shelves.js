@@ -5,7 +5,7 @@ const { csrfProtection, asyncHandler } = require('./utils');
 const { check, validationResult } = require('express-validator');
 const { loginUser, logoutUser, requireAuth } = require('../auth');
 const user = require('../db/models/user');
-const { User, Shelf, Review, Album } = db;
+const { User, Shelf, Review, Album, AlbumList } = db;
 
 /*
 [] create a get route to return all shelves for a single user
@@ -85,9 +85,16 @@ router.post('/users/:id(\\d+)', csrfProtection, asyncHandler(async (req, res, ne
 router.get('/:id(\\d+)', csrfProtection ,asyncHandler(async (req, res )=>{
     const id = req.params.id
     const shelf = await Shelf.findByPk(id)
+    const albumList = await AlbumList.findAll({
+        where:{
+            shelfId: id
+        },
+        include: Album
+    })
 
     res.render('shelf-detail', {
         shelf,
+        albumList,
         csrfToken: req.csrfToken()
     })
 
@@ -112,5 +119,28 @@ router.post('/update/:id(\\d+)', csrfProtection, asyncHandler(async(req, res)=>{
     res.redirect(`/shelves/users/${shelf.User.id}`)
 }))
 
+router.post('/own/:id(\\d+)', csrfProtection, asyncHandler(async(req, res)=>{
+    const id = req.params.id
+    const {shelfId} = req.body
+    console.log(shelfId)
+    await AlbumList.create({shelfId: shelfId, albumId: id})
+    res.redirect('/albums/')
+}))
 
+router.post('/remove/:id(\\d+)', csrfProtection, asyncHandler(async(req, res)=>{
+    const id = req.params.id
+    const albumList = await AlbumList.findByPk(id)
+    const shelfId = albumList.shelfId
+    await albumList.destroy()
+    res.redirect(`/shelves/${shelfId}`)
+}))
+
+router.post('/listenedTo/:id(\\d+)', csrfProtection, asyncHandler(async(req, res)=>{
+    const id = req.params.id
+    const albumList = await AlbumList.findByPk(id)
+    const shelfId = albumList.shelfId
+    albumList.listenedTo = true
+    albumList.save()
+    res.redirect(`/shelves/${shelfId}`)
+}))
 module.exports = router

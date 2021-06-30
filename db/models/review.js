@@ -3,7 +3,8 @@ module.exports = (sequelize, DataTypes) => {
   const Review = sequelize.define('Review', {
     id: {
       type: DataTypes.INTEGER,
-      primaryKey: true
+      primaryKey: true,
+      autoIncrement: true,
     },
     comment: DataTypes.STRING,
     rating: {

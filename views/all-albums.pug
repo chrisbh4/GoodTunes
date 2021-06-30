@@ -3,6 +3,7 @@ block content
     table
         thead
             tr
+                th Add to Shelf
                 th Image
                 th Title
                 th Artist
@@ -11,6 +12,13 @@ block content
         tbody
             each album in albums
                 tr
+                    td
+                        form(action=`/shelves/own/${album.id}` method='post' class='shelfForm')
+                            input(type="hidden" name="_csrf" value= csrfToken)
+                            select(name='shelfId' class='shelfSelector')
+                                each shelf in shelves
+                                    option( name='shelf' value=`${shelf.id}`)= `${shelf.name}`
+                            button(type='submit' class='AddSubmit') Add
                     td: img(src=`${album.imgSrc}`)
                     td: a(href=`/albums/${album.id}`) #{album.title}
                     td= `${album.artist}`

@@ -23,6 +23,7 @@ module.exports = (sequelize, DataTypes) => {
       otherKey: 'userId'
     })
     Album.hasMany(models.Review, { foreignKey: 'albumId' })
+    Album.hasMany(models.AlbumList, {foreignKey: "albumId"})
   };
   return Album;
 };

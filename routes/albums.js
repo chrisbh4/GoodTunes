@@ -2,15 +2,19 @@ const express = require('express');
 const router = express.Router();
 const db = require('../db/models');
 const { csrfProtection, asyncHandler } = require('./utils');
-const { User, Review, Album, Song, Genre } = db
+const { User, Review, Album, Song, Genre, Shelf } = db
 const { requireAuth } = require('../auth')
 
-router.get('/', asyncHandler(async (req, res) => {
+router.get('/', csrfProtection, asyncHandler(async (req, res) => {
+    const { userId } = req.session.auth
     const albums = await Album.findAll({
         include: Genre,
         order: ['title']
     })
-    res.render('all-albums', { albums })
+    const shelves = await Shelf.findAll({
+        where:{userId}
+    })
+    res.render('all-albums', { albums, shelves, csrfToken: req.csrfToken() })
 }))
 
 router.get('/:id(\\d+)', asyncHandler(async (req, res) => {
@@ -30,6 +34,7 @@ router.get('/:id(\\d+)', asyncHandler(async (req, res) => {
     })
     res.render('album', { album, songs, reviews })
 }))
+
 
 
 
