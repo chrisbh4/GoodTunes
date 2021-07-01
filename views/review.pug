@@ -14,13 +14,15 @@ block content
             ul(class="errorsUl")
                 each error in errors
                     li(class="errorsLi")=error
-    form( class='reviewForm' action=`/reviews/albums/${album.id}` method='post')
-        input(type="hidden" name='_csrf' value=csrfToken)
-        div(class='comment')
-            label(for="comment" class='reviewComment') Comment:
-            textarea(class="reviewArena" name="comment" maxlength='255' value=comment )
-        div(class='rating' class="reviewRating")
-            label(for='rating' class='reviewLabel') Rating 1/10:
-            input(type='number' class='reviewInput' name='rating' value=rating)
-        div
-            button(class='reviewButton' type='submit') Submit
+    div(class="reviewContainer")
+        h3(class="addReview") Add a Review Here:
+        form( class='reviewForm' action=`/reviews/albums/${album.id}` method='post')
+            input(type="hidden" name='_csrf' value=csrfToken)
+            div(class='comment')
+                h5(for="comment" class='reviewComment') Comment:
+                textarea(class="reviewArena" name="comment" maxlength='255' value=comment )
+            div(class='rating' class="reviewRating")
+                h5(for='rating' class='reviewLabel') Rating 1/10:
+                input(type='number' class='reviewInput' name='rating' value=rating)
+            div
+                button(class='reviewButton' type='submit') Submit
