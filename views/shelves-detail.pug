@@ -1,4 +1,9 @@
 extends layout.pug
+block head
+    link(rel="stylesheet", href="/stylesheets/shelves-detail.css")
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
 block scripts
     script(type='module' src='/javascripts/shelvesDetail.js')
 block content
@@ -12,6 +17,7 @@ block content
             div(class=`shelf-${shelf.id}`)
                 li: a(href=`/shelves/${shelf.id}`) #{shelf.name}
                 button(class=`deleteShelfButton` id=`${shelf.id}`) Delete
+    h1 My Reviews
     div(class='reviews')
         table
             thead
@@ -20,6 +26,8 @@ block content
                     th Artist
                     th Comment
                     th Rating
+                    th Edit Review
+                    th Delete Review
             tbody
                 each review in reviews
                     tr

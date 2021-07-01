@@ -1,4 +1,9 @@
 extends layout.pug
+block head
+    link(rel="stylesheet", href="/stylesheets/album.css")
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
 block content
     div(class='albumTitle')
         h1= `${album.title} by ${album.artist}`
@@ -8,7 +13,7 @@ block content
         h3=`Genre: ${album.Genre.name}`
     div(class='releaseDate')
         h3=`Release Date: ${album.releaseDate}`
-    div(class='songs') Tracklist
+    div(class='songs')
         table
             thead
                 tr
