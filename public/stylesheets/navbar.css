@@ -11,20 +11,21 @@ body {
   display: flex;
   justify-content: space-between;
   align-content: space-around;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Poppins', sans-serif;
   padding: 5px;
 }
 
 .navbar-nonuser-buttons {
-  padding: 5px;
+  border-radius: 20px;
+  padding: 5px 15px 5px 15px;
 }
 
 .login-button {
   color: snow;
   text-decoration: none;
   border: 1px solid snow;
-  padding: 4px;
-  border-radius: 10%;
+  border-radius: 20px;
+  padding: 5px 15px 5px 15px;
   margin-top: 5px;
 }
 
@@ -32,9 +33,9 @@ body {
   color: snow;
   text-decoration: none;
   border: 1px solid snow;
-  padding: 4px;
   margin-left: 5px;
-  border-radius: 10%;
+  border-radius: 20px;
+  padding: 5px 15px 5px 15px;
   margin-right: 5px;
 }
 
@@ -42,36 +43,47 @@ body {
   background-color: rgb(216,187,166);
   font-size: medium;
   margin-left: 15px;
-  font-family: Arial, Helvetica, sans-serif;
-  border-radius: 5px;
+  font-family: 'Poppins', sans-serif;
   border: 1px solid rgb(82, 79, 79);
   margin-top: 10px;
-  padding: 4px;
+  border-radius: 20px;
+  padding: 5px 15px 5px 15px;
 }
 
 .logout-button {
   background-color: rgb(225, 199, 165);
   font-size: medium;
   margin-left: 15px;
-  font-family: Arial, Helvetica, sans-serif;
-  border-radius: 5px;
+  font-family: 'Poppins', sans-serif;
   border: 1px solid rgb(82, 79, 79);
   margin-top: 10px;
-  padding: 4px;
+  border-radius: 20px;
+  padding: 5px 15px 5px 15px;
 }
 
 .my-collection-button {
   background-color: rgb(225, 199, 165);
   font-size: medium;
   margin-left: 15px;
-  font-family: Arial, Helvetica, sans-serif;
-  border-radius: 5px;
+  font-family: 'Poppins', sans-serif;
   border: 1px solid rgb(82, 79, 79);
   margin-top: 10px;
-  padding: 4px;
+  border-radius: 20px;
+  padding: 5px 15px 5px 15px;
 }
 
 .logo {
   width: 7em;
   height: 4em;
+}
+
+.albums-page-button {
+  font-family: 'Poppins', sans-serif;
+  background-color: rgb(225, 199, 165);
+  border-radius: 20px;
+  padding: 5px 15px 5px 15px;
+}
+
+.navbar-text {
+  font-family: 'Poppins', sans-serif;
 }
