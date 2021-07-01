@@ -95,10 +95,6 @@ body{
   border-radius: 20px;
   padding: 5px 15px 5px 15px;
 }
-.mainErrorsContainer{
-    /* display: flex;
-    justify-content: center; */
-}
 
 .errorsContainer{
     width: 200px;
