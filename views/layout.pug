@@ -2,24 +2,25 @@ html
   head
     meta(charset="utf-8")
     title GoodTunes - #{title}
-    link(rel='stylesheet' href='/stylesheets/reset.css')
-    block head
+    link(rel='stylesheet' href='/stylesheets/navbar.css')
     block scripts
   body
-    nav(class='navbar')
-      a(class='logo' href='/') GoodTunes
+    div(class='navbar')
+      img(src="../../graphics/goodTunesSplashPage.png")
       form(class='albums-page' action='/albums/' method='get')
-        button(class='albums-page-button' type='submit') Go to all albums
+        button(class='albums-page-button' type='submit') All Albums
       if locals.authenticated
         span(class='navbar-text') Welcome #{user.username}
-        form(class="navbar-logout" action='/users/logout' method='post')
-          input(class='logout-button' type='submit' value='logout')
         form(class='my-page' action=`/shelves/users/${user.id}` method='get')
-          button(class='my-page-button' type='submit') Go to your page
+          button(class='my-collection-button' type='submit') My Collection
+        form(class="navbar-logout" action='/users/logout' method='post')
+          input(class='logout-button' type='submit' value='Log Out')
       else
-        span(class='navbar-text')
+        span(class='navbar-nonuser-buttons')
           a(class="login-button" href='/users/login') Login
           a(class="signup-button" href='/users/signup') Sign Up
           form(method='post' action='/users/demo')
-            button(type='submit') Take a Tour
+            button(class="take-a-tour" type='submit') Take a Tour
     block content
+
+  //-  span(class='navbar-text')
