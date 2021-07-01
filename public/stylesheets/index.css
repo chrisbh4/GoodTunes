@@ -92,8 +92,10 @@ form > button {
 } */
 
 .reviewImg {
-  height: 100px;
-  width: auto;
+  height: 200px;
+  width: 200px;
+  object-fit: cover;
+  box-sizing: border-box;
 }
 
 /* .reviewH3 {

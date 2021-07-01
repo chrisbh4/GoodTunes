@@ -7,15 +7,15 @@ body {
   font-size: 16px;
   color: white;
   font-family: 'Poppins', sans-serif;
-  padding: 5px;
   /* display: flex;
   justify-content: space-between;
   align-content: space-around; */
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 100px;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr;
   grid-template-areas:
-  "logo directory welcome collection logOut"
+  "left mid right";
+  position: relative;
 }
 
 .navbar-nonuser-buttons {
@@ -36,8 +36,8 @@ body {
   border: 1px solid snow;
   border-radius: 20px;
   padding: 5px 15px 5px 15px;
-  margin-top: 5px;
-  grid-area: logOut; */
+  margin-top: 5px;*/
+  grid-area: right;
 }
 
 .signup-button {
@@ -55,8 +55,9 @@ body {
   margin-left: 5px;
   border-radius: 20px;
   padding: 5px 15px 5px 15px;
-  margin-right: 5px;
-  grid-area: collection; */
+  margin-right: 5px; */
+  grid-area: right;
+  margin-right: 10px;
 }
 
 .take-a-tour {
@@ -68,7 +69,7 @@ body {
   margin-top: 10px;
   border-radius: 20px;
   padding: 5px 15px 5px 15px;
-  grid-area: welcome;
+  grid-area: right;
 }
 
 .logout-button {
@@ -80,7 +81,8 @@ body {
   margin-top: 10px;
   border-radius: 20px;
   padding: 5px 15px 5px 15px;
-  grid-area: logOut;
+  grid-area: right;
+  margin-left: 8px;
 }
 
 .my-collection-button {
@@ -92,13 +94,17 @@ body {
   margin-top: 10px;
   border-radius: 20px;
   padding: 5px 15px 5px 15px;
-  grid-area: collection;
+  grid-area: right;
 }
 
 .logo {
-  width: 7em;
-  height: 4em;
-  grid-area: logo;
+  width: 112px;
+  height: 64px;
+  grid-area: left;
+  box-sizing: border-box;
+  position: absolute;
+  margin-top: -2px;
+  margin-left: 35px;
 }
 
 .albums-page-button {
@@ -114,9 +120,39 @@ body {
   border-radius: 20px;
   padding: 5px 15px 5px 15px;
   margin-top: 12px; */
-  grid-area: albums;
+  grid-area: left;
+  margin-left: 35px;
 }
 
 .navbar-text {
   font-family: 'Poppins', sans-serif;
+  font-size: x-large;
+  font-weight: lighter;
+}
+
+.left-navbar {
+    display:flex;
+    justify-content: left;
+    align-items:center;
+}
+
+.middle-navbar {
+    display: flex;
+    justify-content: center;
+    align-items:center;
+}
+
+.right-navbar {
+    display: flex;
+    justify-content: right;
+    align-items:center;
+}
+
+.right-navbar-nonuser {
+    margin-left: 55px;
+}
+
+.left-navbar a {
+    width: 113px;
+    height: 65px;
 }
