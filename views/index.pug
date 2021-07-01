@@ -14,18 +14,18 @@ block content
     h1= title
     p Welcome to your Project Skeleton
     div(class="bodyContainer")
-        div(class='topAlbums')
-        table
-            thead
-            tr
-                th Most Owned Albums
+        div(class='Albums')
+            table(class='albumTable')
+                thead
+                tr
+                    th Most Owned Albums
 
-            tbody
-                each album in albums
-                    tr
-                    td
-                        a(href=`/albums/${album.id}`)
-                        img(src=`${album.imgSrc}`)
+                tbody
+                    each album in albums
+                        tr
+                        td
+                            a(href=`/albums/${album.id}`)
+                            img(src=`${album.imgSrc}`)
         div(class="spacerDiv")
         div(class='recentReviews')
                 h3(class='reviewsH3') Most Recent Reviews

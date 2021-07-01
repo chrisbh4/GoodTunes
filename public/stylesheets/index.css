@@ -88,10 +88,8 @@ form > button {
 }
 
 .bodyContainer {
-    display: inline-flex;
-    max-width: 50%;
-    /* justify-content:  ; */
-
+    display: flex;
+    justify-content: space-between;
 }
 
 .reviewImg{
@@ -99,20 +97,11 @@ form > button {
     width: auto;
 }
 
-
-.recentReviews{
-    height: 55px;
-    justify-self: flex-end;
-}
-
-.reviewsH3{
+.reviewsH3 {
     height: 26px;
-    margin-top:-0.3px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    margin-top: -0.3px;
 }
 
-.spacerDiv{
-    width: 10em;
+.albumTable {
+    width: 60%px;
 }
