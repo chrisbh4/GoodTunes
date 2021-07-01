@@ -64,6 +64,7 @@ body{
    width: 225px;
    height: 90px;
    color: black;
+   border: 1px solid black;
 
 }
 
@@ -80,6 +81,7 @@ body{
 
 .reviewInput{
     color: black;
+    border: 1px solid black;
 }
 
 .reviewButton{
