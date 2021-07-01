@@ -1,4 +1,9 @@
 extends layout.pug
+block head
+    link(rel="stylesheet", href="/stylesheets/login.css")
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
 
 block content
     if errors
@@ -6,13 +11,19 @@ block content
             ul
                 each error in errors
                     li=error
-    form(action="/users/login" method="post")
-        input(type="hidden" name="_csrf" value=csrfToken)
-        div
-            label(for="username") Username
-            input(type="text" name="username" )
-        div
-            label(for="password") Password
-            input(type="text" name="password" )
-        div
-            button(type="submit") Log In
+    div.login-image
+        div.login-container
+            h3 Login
+            form(action="/users/login" method="post")
+                input(type="hidden" name="_csrf" value=csrfToken)
+                div.username-input
+                    label(for="username") Username
+                    input(type="text" name="username" )
+                div.password-input
+                    label(for="password") Password
+                    input(type="text" name="password" )
+                div
+                    button.submit-button(type="submit") Log In
+                div.p-container
+                    p If you don't have an account,
+                        a(href="/users/signup")  Sign Up

@@ -5,7 +5,7 @@ body {
   background-image: url("../../graphics/goodTunesSplashPage.png");
 }
 .navbar {
-  background-color: rgb(81,55,34);
+  background-color: #2B1F11;
   font-size: 16px;
   color: white;
   display: flex;

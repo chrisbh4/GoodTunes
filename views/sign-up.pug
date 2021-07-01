@@ -1,21 +1,28 @@
 extends layout.pug
-
+block head
+    link(rel="stylesheet", href="/stylesheets/sign-up.css")
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
 block content
     if errors
         div
             ul
                 each error in errors
                     li=error
-    form(action="/users/signup" method="post")
-        input(type="hidden" name="_csrf" value=csrfToken)
-        div
-            label(for="username") Username
-            input(type="text" name="username" )
-        div
-            label(for="password") Password
-            input(type="text" name="password" )
-        div
-            label(for="confirmPassword") Confirm Password
-            input(type="text" name="confirmPassword" )
-        div
-            button(type="submit") Sign Up
+    div(class='signup-image')
+        div(class='signup-container')
+            h3 Sign Up
+            form(action="/users/signup" method="post")
+                input(type="hidden" name="_csrf" value=csrfToken)
+                div.username-input
+                    label(for="username") Username
+                    input(type="text" name="username" )
+                div.password-input
+                    label(for="password") Password
+                    input(type="text" name="password" )
+                div.confirmPassword-input
+                    label(for="confirmPassword") Confirm Password
+                    input(type="text" name="confirmPassword" )
+                div
+                    button.submit-button(type="submit") Submit

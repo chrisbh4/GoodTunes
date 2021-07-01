@@ -1,0 +1,63 @@
+body {
+    background-color: #5B4028;
+    position: relative;
+}
+
+.signup-container {
+    position: absolute;
+    background-color: #E1C7A5;
+    margin-left: 800px;
+    margin-top: 250px;
+    padding: 25px;
+    box-shadow: 0 0 4px 4px #5B4028;
+    border-radius: 10px;
+}
+
+.signup-image {
+    background-image: url('https://i.imgur.com/4gHt3Ci.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    min-width: 1200px;
+    min-height: 850px;
+    max-width: 1300px;
+    max-height: 950px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.username-input, .password-input, .confirmPassword-input{
+    padding: 15px;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    font-size: large;
+    font-family: 'Poppins', sans-serif;
+}
+
+div > input {
+    margin-left: 10px;
+}
+
+h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: x-large;
+    margin-left: 129px;
+    font-weight: bold;
+}
+
+.submit-button {
+    margin-top: 10px;
+    padding: 5px 15px 5px 15px;
+    font-size: large;
+    display: flex;
+    justify-content: space-between;
+    font-size: large;
+    border-radius: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Poppins', sans-serif;
+}
