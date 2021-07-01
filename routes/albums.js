@@ -7,15 +7,23 @@ const { requireAuth } = require('../auth')
 
 router.get('/', csrfProtection, asyncHandler(async (req, res) => {
     console.log("some messeage")
-    const { userId } = req.session.auth
-    const albums = await Album.findAll({
-        include: Genre,
-        order: ['title']
-    })
-    const shelves = await Shelf.findAll({
-        where:{userId}
-    })
-    res.render('all-albums', { albums, shelves, csrfToken: req.csrfToken() })
+    if (req.session.auth) {
+        const { userId } = req.session.auth
+        const albums = await Album.findAll({
+            include: Genre,
+            order: ['title']
+        })
+        const shelves = await Shelf.findAll({
+            where:{userId}
+        })
+        res.render('all-albums', { albums, shelves, csrfToken: req.csrfToken() })
+    }else {
+        const albums = await Album.findAll({
+            include: Genre,
+            order: ['title']
+        })
+        res.render('all-albums', { albums, csrfToken: req.csrfToken() })
+    }
 }))
 
 router.get('/:id(\\d+)', asyncHandler(async (req, res) => {
