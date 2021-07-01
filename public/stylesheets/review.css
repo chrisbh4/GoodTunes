@@ -1,0 +1,123 @@
+*{
+    font-family: 'Poppins', sans-serif
+}
+
+body{
+    background-color:#302f2f ;
+}
+
+
+
+.title{
+    display: flex;
+    justify-content: center;
+    color: ivory;
+}
+
+.imgContainer{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 10px;
+    /* align-items: center; */
+}
+
+.reviewForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.reviewComment{
+    color: black;
+    margin-top: -10px;
+}
+
+.reviewImg{
+    border: 1px solid white;
+}
+
+.reviewContainer{
+    width: 300px;
+    height: 350px;
+    border: 5px solid black;
+    border-radius: 20px;
+    padding: 20px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: ivory;
+}
+
+.addReview{
+    color: black;
+    display:flex;
+    justify-content: center;
+    padding-bottom: 30px;
+    text-decoration: underline;
+
+}
+.reviewArena{
+   width: 225px;
+   height: 90px;
+   color: black;
+   border: 1px solid black;
+
+}
+
+
+.reviewRating{
+    color: black;
+    margin-top: 10px;
+}
+
+.reviewLabel{
+    color: black;
+    margin-top: 10px;
+}
+
+.reviewInput{
+    color: black;
+    border: 1px solid black;
+}
+
+.reviewButton{
+    color: black;
+    background-color: ivory;
+  font-size: medium;
+  /* margin-left: 125px; */
+  font-family: 'Poppins', sans-serif;
+  border: 1px solid rgb(82, 79, 79);
+  margin-top: 10px;
+  border-radius: 20px;
+  padding: 5px 15px 5px 15px;
+}
+.mainErrorsContainer{
+    /* display: flex;
+    justify-content: center; */
+}
+
+.errorsContainer{
+    width: 200px;
+    /* display: flex; */
+    /* justify-content: center; */
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(108, 3, 3);
+    border: 3px solid black;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.errorsUl{
+    color: ivory;
+}
+
+.errorsLi{
+    color: ivory;
+    font-family: 'Poppins', sans-serif;
+}

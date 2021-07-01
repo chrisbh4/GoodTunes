@@ -1,13 +1,14 @@
 body {
-    background-color: rgb(230, 228, 219);
-}
+    background-color: #302f2f;
+  }
 
 table {
     width: 100%;
-    border: 2px solid rgba(232,236,241,1);
+    border: 2px solid#302f2f;
     padding: 10px;
     border-collapse: collapse;
     border-spacing: 0 5px;
+    background-color: #302f2f;
 }
 
 .all-albums-div {
@@ -18,7 +19,7 @@ th {
     border-bottom: 2px solid rgba(232,236,241,1);
     border-collapse: collapse;
     padding: 15px;
-    background-color: rgb(69, 108, 71);
+    background-color: maroon;
     font-family: 'Poppins', sans-serif;
     font-size: 14px;
     font-weight: 500;
@@ -90,6 +91,7 @@ form select {
     text-align: center;
     font-family: 'Poppins', sans-serif;
     font-size: 15px;
+    color: ivory;
 
 }
 
@@ -97,6 +99,7 @@ form select {
     text-align: center;
     font-family: 'Poppins', sans-serif;
     font-size: 15px;
+    color: ivory;
 }
 
 .songs {
@@ -105,4 +108,18 @@ form select {
     text-align: center;
     margin-top: 25px;
     margin-bottom: 25px;
+}
+
+.reviewForm{
+    display: flex;
+    justify-content: center;
+
+}
+
+.reviewButton{
+    font-size: 15px;
+    border-radius: 20px;
+    font-family: 'Poppins', sans-serif;
+    background-color: ivory;
+    border: 2px solid rgb(82, 79, 79);
 }

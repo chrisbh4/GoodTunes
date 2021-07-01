@@ -6,10 +6,11 @@ block head
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
 block content
     if errors
-        div
-            ul
+     div(class="mainErrContainer")
+        div(class="errorsContainer")
+            ul(class="errorsUl")
                 each error in errors
-                    li=error
+                    li(class="errorsLi")=error
     div(class='signup-image')
         div(class='signup-container')
             h3 Sign Up

@@ -69,3 +69,25 @@ p {
     margin-right: auto;
     font-family: 'Poppins', sans-serif;
 }
+
+
+.errorsContainer{
+    width: 200px;
+    /* display: flex; */
+    /* justify-content: center; */
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(108, 3, 3);
+    border: 3px solid black;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.errorsUl{
+    color: ivory;
+}
+
+.errorsLi{
+    color: ivory;
+}

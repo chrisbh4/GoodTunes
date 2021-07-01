@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(230, 228, 219);
+    background-color: #302f2f;
 }
 
 table {
@@ -7,6 +7,7 @@ table {
     padding: 10px;
     border-collapse: collapse;
     border-spacing: 0 5px;
+    margin-top: 30px;
 }
 
 .all-albums-div {
@@ -17,7 +18,7 @@ th {
     border-bottom: 2px solid rgba(232,236,241,1);
     border-collapse: collapse;
     padding: 17px;
-    background-color: rgb(69, 108, 71);
+     background-color: rgb(108, 3, 3);;
     font-family: 'Poppins', sans-serif;
     font-size: 14px;
     font-weight: 500;
@@ -63,6 +64,7 @@ img {
 
 .form-container {
     display: flex;
+
 }
 
 form select {
@@ -77,8 +79,9 @@ form select {
 .form-container button {
     font-family: 'Poppins', sans-serif;
     font-size: 14px;
-    border-radius: 20px;
+    border-radius: 10px;
     padding: 10px 25px 10px 25px;
     text-align: center;
-    background-color: rgba(0, 0, 0, 0);
+    background-color: #5d5c5c;
+    color: ivory;
 }
