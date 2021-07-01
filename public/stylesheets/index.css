@@ -85,3 +85,22 @@ form > button {
     font-size: 15px;
     text-align: center;
 }
+
+.bodyContainer {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.reviewImg {
+    height: 100px;
+    width: auto;
+}
+
+.reviewH3 {
+    height: 26px;
+    margin-top: -1px;
+}
+
+.albumTable {
+    width: 60%;
+}

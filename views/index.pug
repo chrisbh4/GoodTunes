@@ -11,35 +11,38 @@ block head
 //-   script(src="/javascripts/index.js" type="module" defer)
 
 block content
-  h1= title
-  p Welcome to your Project Skeleton
-  div(class='topAlbums')
-   table
-    thead
-      tr
-         th Most Owned Albums
-
-    tbody
-        each album in albums
-            tr
-               td
-                a(href=`/albums/${album.id}`)
-                  img(src=`${album.imgSrc}`)
-  div(class='recentReviews')
-   h3 Most Recent Reviews
-   table
-        thead
-            tr
-                th Album
-                th UserName
-                th Comment
-                th Rating
-        tbody
-            each review in reviews
+  block content
+    h1= title
+    p Welcome to your Project Skeleton
+    div(class="bodyContainer")
+        div(class='Albums')
+            table(class='albumTable')
+                thead
                 tr
-                    td
-                     a(href=`/albums/${review.Album.id}`)
-                        img(src=`${review.Album.imgSrc}`)
-                    td= `${review.User.username}`
-                    td= `${review.comment}`
-                    td= `${review.rating}`
+                    th Most Owned Albums
+
+                tbody
+                    each album in albums
+                        tr
+                        td
+                            a(href=`/albums/${album.id}`)
+                            img(src=`${album.imgSrc}`)
+        div(class="spacerDiv")
+        div(class='recentReviews')
+                h3(class='reviewsH3') Most Recent Reviews
+                table
+                    thead
+                        tr
+                            th Album
+                            th UserName
+                            th Comment
+                            th Rating
+                    tbody
+                        each review in reviews
+                            tr
+                                td
+                                    a(href=`/albums/${review.Album.id}`)
+                                        img(class="reviewImg" src=`${review.Album.imgSrc}`)
+                                td= `${review.User.username}`
+                                td= `${review.comment}`
+                                td= `${review.rating}`
