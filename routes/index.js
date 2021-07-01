@@ -9,7 +9,7 @@ const { requireAuth } = require('../auth')
 router.get('/', csrfProtection, asyncHandler(async function(req, res, next) {
   const albums = await Album.findAll({
     order: [['ownerCount', 'DESC']],
-    limit: 5
+    limit: 10
   })
   const reviews = await Review.findAll({
     order: [['createdAt', 'DESC']],

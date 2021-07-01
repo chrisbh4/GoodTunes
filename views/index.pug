@@ -10,23 +10,15 @@ block head
 //-   //- add page specific js
 //-   script(src="/javascripts/index.js" type="module" defer)
 
-block content
-  block content
-    h1= title
-    p Welcome to your Project Skeleton
-    div(class="bodyContainer")
-        div(class='Albums')
-            table(class='albumTable')
-                thead
-                tr
-                    th Most Owned Albums
 
-                tbody
-                    each album in albums
-                        tr
-                        td
-                            a(href=`/albums/${album.id}`)
-                            img(src=`${album.imgSrc}`)
+block content
+    div(class="bodyContainer")
+        h3 Top 10 Owned Albums
+        div(class='Albums')
+            each album in albums
+                div(class="topAlbumList")
+                    a(href=`/albums/${album.id}`)
+                        img(src=`${album.imgSrc}`)
         div(class="spacerDiv")
         div(class='recentReviews')
                 h3(class='reviewsH3') Most Recent Reviews

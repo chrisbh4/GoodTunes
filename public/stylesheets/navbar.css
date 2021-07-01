@@ -2,7 +2,7 @@ body {
   background-color: #5B4028;
 }
 .navbar {
-  background-color: #2B1F11;
+  background-color: rgb(108, 3, 3);
   width: 100%;
   font-size: 16px;
   color: white;
@@ -24,7 +24,7 @@ body {
 }
 
 .login-button {
-  background-color: rgb(225, 199, 165);
+  background-color: ivory;
   font-size: medium;
   font-family: 'Poppins', sans-serif;
   border: 1px solid rgb(82, 79, 79);
@@ -41,7 +41,7 @@ body {
 }
 
 .signup-button {
-  background-color: rgb(225, 199, 165);
+  background-color: ivory;
   margin-left: 150px;
   font-size: medium;
   font-family: 'Poppins', sans-serif;
@@ -60,7 +60,7 @@ body {
 }
 
 .take-a-tour {
-  background-color: rgb(216,187,166);
+  background-color: ivory;
   font-size: medium;
   margin-left: 15px;
   font-family: 'Poppins', sans-serif;
@@ -72,7 +72,7 @@ body {
 }
 
 .logout-button {
-  background-color: rgb(225, 199, 165);
+  background-color: ivory;
   font-size: medium;
   /* margin-left: 125px; */
   font-family: 'Poppins', sans-serif;
@@ -84,7 +84,7 @@ body {
 }
 
 .my-collection-button {
-  background-color: rgb(225, 199, 165);
+  background-color: ivory;
   font-size: medium;
   margin-left: 130px;
   font-family: 'Poppins', sans-serif;
@@ -102,7 +102,7 @@ body {
 }
 
 .albums-page-button {
-  background-color: rgb(225, 199, 165);
+  background-color: ivory;
   font-size: medium;
   font-family: 'Poppins', sans-serif;
   border: 1px solid rgb(82, 79, 79);

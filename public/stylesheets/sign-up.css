@@ -5,11 +5,11 @@ body {
 
 .signup-container {
     position: absolute;
-    background-color: #E1C7A5;
+    background-color: ivory;
     margin-left: 800px;
     margin-top: 250px;
     padding: 25px;
-    box-shadow: 0 0 4px 4px #5B4028;
+    box-shadow: 0 0 4px 4px rgb(50, 50, 50);
     border-radius: 10px;
 }
 
@@ -41,6 +41,14 @@ div > input {
     margin-left: 10px;
 }
 
+.p-container {
+    margin-top: 30px;
+}
+
+p {
+    font-family: 'Poppins', sans-serif;
+}
+
 h3 {
     font-family: 'Poppins', sans-serif;
     font-size: x-large;
@@ -60,4 +68,7 @@ h3 {
     margin-left: auto;
     margin-right: auto;
     font-family: 'Poppins', sans-serif;
+    background-color: rgb(108, 3, 3);
+    color: ivory;
+    font-weight: bold;
 }
