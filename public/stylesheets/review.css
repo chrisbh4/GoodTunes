@@ -1,0 +1,74 @@
+body{
+    background-color:#302f2f ;
+}
+
+
+
+.title{
+    display: flex;
+    justify-content: center;
+    color: ivory;
+}
+
+.imgContainer{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 10px;
+    /* align-items: center; */
+}
+
+.reviewForm{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.reviewComment{
+    color: ivory;
+    padding-bottom: -10px;
+}
+
+.reviewImg{
+
+    border: 1px solid white;
+
+}
+
+
+.reviewArena{
+
+}
+
+.reviewRating{
+
+}
+
+.reviewLabel{
+    color: ivory;
+}
+
+.reviewInput{
+
+}
+
+.reviewButton{
+
+}
+.mainErrorsContainer{
+    display: flex;
+    justify-content: center;
+}
+
+.errorsContainer{
+    width: 200px;
+    background-color: rgb(108, 3, 3);
+    border: 3px solid black;
+}
+
+.errorsUl{
+    color: ivory;
+}
+
+.errorsLi{
+    color: ivory;
+}
