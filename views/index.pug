@@ -1,5 +1,9 @@
 extends layout.pug
-
+block head
+    link(rel="stylesheet", href="/stylesheets/index.css")
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
 //- append head
 //-   //- add page specific styles by appending to the head
 //-   link(rel="stylesheet" href="/stylesheets/index.css")
@@ -9,12 +13,11 @@ extends layout.pug
 block content
   h1= title
   p Welcome to your Project Skeleton
-  h3 Most Owned Albums
   div(class='topAlbums')
    table
     thead
       tr
-         th Image
+         th Most Owned Albums
 
     tbody
         each album in albums

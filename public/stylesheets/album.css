@@ -1,17 +1,3 @@
-h1 {
-    color: #555555;
-}
-
-h3 {
-    font-family: 'Poppins', sans-serif;
-    font-size: 16px;
-    padding: 15px;
-    text-transform: uppercase;
-    text-align: center;
-    color: white;
-    background-color: rgb(69, 108, 71);;
-}
-
 body {
     background-color: rgb(230, 228, 219);
 }
@@ -22,6 +8,10 @@ table {
     padding: 10px;
     border-collapse: collapse;
     border-spacing: 0 5px;
+}
+
+.all-albums-div {
+    margin: 5px;
 }
 
 th {
@@ -74,14 +64,45 @@ img {
     border: 1px solid black;
 } */
 
-form select {
-    font-family: 'Poppins', sans-serif;
-    font-size: 19px;
-    margin: 10px;
+.form-container {
+    display: flex;
 }
 
-form > button {
+form select {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    margin: 10px;
+    border-radius: 10px;
+    padding: 9px 25px 9px 25px;
+    border: 1px solid black;
+}
+
+.form-container button {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    border-radius: 20px;
+    padding: 10px 25px 10px 25px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.albumTitle {
+    text-align: center;
     font-family: 'Poppins', sans-serif;
     font-size: 15px;
+
+}
+
+.genre, .releaseDate, .albumImg {
     text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+}
+
+.songs {
+    font-family: 'Poppins', sans-serif;
+    font-size: 25px;
+    text-align: center;
+    margin-top: 25px;
+    margin-bottom: 25px;
 }

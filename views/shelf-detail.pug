@@ -1,4 +1,9 @@
 extends layout.pug
+block head
+    link(rel="stylesheet", href="/stylesheets/shelf.css")
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
 block scripts
     script(type='module' src='/javascripts/shelfDetail.js')
 
@@ -15,6 +20,7 @@ block content
                 th Title
                 th Artist
                 th Release Date
+                th Remove
                 th Listened To
         tbody
             each album in albumList
