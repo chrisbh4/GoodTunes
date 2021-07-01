@@ -1,28 +1,36 @@
 extends layout.pug
+block head
+    link(rel='stylesheet' href='/stylesheets/all-albums.css')
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
 block content
-    table
-        thead
-            tr
-                th Add to Shelf
-                th Image
-                th Title
-                th Artist
-                th Release Date
-                th Genre
-        tbody
-            each album in albums
+    div(class='all-albums-div')
+        table
+            thead
                 tr
-                    td
-                        form(action=`/shelves/own/${album.id}` method='post' class='shelfForm')
-                            input(type="hidden" name="_csrf" value= csrfToken)
-                            select(name='shelfId' class='shelfSelector')
-                                each shelf in shelves
-                                    option( name='shelf' value=`${shelf.id}`)= `${shelf.name}`
-                            button(type='submit' class='AddSubmit') Add
-                    td
-                        a(href=`/albums/${album.id}`)
-                            img(src=`${album.imgSrc}`)
-                    td: a(href=`/albums/${album.id}`) #{album.title}
-                    td= `${album.artist}`
-                    td= `${album.releaseDate}`
-                    td= `${album.Genre.name}`
+                    th(class='add-head') Add to Shelf
+                    th(class='image-head') Image
+                    th(class='title-head') Title
+                    th(class='artist-head') Artist
+                    th(class='release-date-head') Release Date
+                    th(class='genre') Genre
+            tbody
+                each album in albums
+                    tr
+                        td.add-td
+                            div(class='form-container')
+                                form(action=`/shelves/own/${album.id}` method='post' class='shelfForm')
+                                    input(type="hidden" name="_csrf" value= csrfToken)
+                                    select(name='shelfId' class='shelfSelector')
+                                        each shelf in shelves
+                                            option( name='shelf' value=`${shelf.id}`)= `${shelf.name}`
+                                    button(type='submit' class='AddSubmit') Add
+                        td
+                            div(class='albums-img')
+                                a(href=`/albums/${album.id}`)
+                                    img(src=`${album.imgSrc}`)
+                        td: a(href=`/albums/${album.id}`) #{album.title}
+                        td= `${album.artist}`
+                        td= `${album.releaseDate}`
+                        td= `${album.Genre.name}`
