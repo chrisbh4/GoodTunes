@@ -20,11 +20,14 @@ html
         form(class="navbar-logout" action='/users/logout' method='post')
           input(class='logout-button' type='submit' value='Log Out')
       else
-        span(class='navbar-nonuser-buttons')
-          a(class="login-button" href='/users/login') Login
-          a(class="signup-button" href='/users/signup') Sign Up
-          form(method='post' action='/users/demo')
-            button(class="take-a-tour" type='submit') Take a Tour
+        form(method='post' action='/users/demo')
+          button(class="take-a-tour" type='submit') Take a Tour
+        form(method='get' action='/users/signup')
+          button(class="signup-button" type='submit') Sign Up
+        form(method='get' action='/users/login')
+          button(class="login-button" type='submit') Login
     block content
 
   //-  span(class='navbar-text')
+        a(class="login-button" href='/users/login') Login
+        a(class="signup-button" href='/users/signup') Sign Up

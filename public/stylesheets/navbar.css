@@ -3,6 +3,7 @@ body {
 }
 .navbar {
   background-color: #2B1F11;
+  width: 100%;
   font-size: 16px;
   color: white;
   font-family: 'Poppins', sans-serif;
@@ -23,24 +24,39 @@ body {
 }
 
 .login-button {
-  color: snow;
+  background-color: rgb(225, 199, 165);
+  font-size: medium;
+  font-family: 'Poppins', sans-serif;
+  border: 1px solid rgb(82, 79, 79);
+  margin-top: 10px;
+  border-radius: 20px;
+  padding: 5px 15px 5px 15px;
+  /* color: snow;
   text-decoration: none;
   border: 1px solid snow;
   border-radius: 20px;
   padding: 5px 15px 5px 15px;
   margin-top: 5px;
-  grid-area: logOut;
+  grid-area: logOut; */
 }
 
 .signup-button {
-  color: snow;
+  background-color: rgb(225, 199, 165);
+  margin-left: 150px;
+  font-size: medium;
+  font-family: 'Poppins', sans-serif;
+  border: 1px solid rgb(82, 79, 79);
+  margin-top: 10px;
+  border-radius: 20px;
+  padding: 5px 15px 5px 15px;
+  /* color: snow;
   text-decoration: none;
   border: 1px solid snow;
   margin-left: 5px;
   border-radius: 20px;
   padding: 5px 15px 5px 15px;
   margin-right: 5px;
-  grid-area: collection;
+  grid-area: collection; */
 }
 
 .take-a-tour {
