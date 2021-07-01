@@ -89,7 +89,8 @@ form > button {
 
 .bodyContainer {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    /* grid-template-columns: 2fr 1fr; */
 }
 
 .reviewImg{
@@ -104,4 +105,5 @@ form > button {
 
 .albumTable {
     width: 60%px;
+    grid-column-start: 2;
 }
