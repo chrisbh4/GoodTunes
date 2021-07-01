@@ -15,11 +15,10 @@ html
         button(class='albums-page-button' type='submit') Album Directory
       if locals.authenticated
         span(class='navbar-text') Welcome #{user.username}
-        span.navbar-user-buttons
-          form(class='my-page' action=`/shelves/users/${user.id}` method='get')
-            button(class='my-collection-button' type='submit') My Collection
-          form(class="navbar-logout" action='/users/logout' method='post')
-            input(class='logout-button' type='submit' value='Log Out')
+        form(class='my-page' action=`/shelves/users/${user.id}` method='get')
+          button(class='my-collection-button' type='submit') My Collection
+        form(class="navbar-logout" action='/users/logout' method='post')
+          input(class='logout-button' type='submit' value='Log Out')
       else
         span(class='navbar-nonuser-buttons')
           a(class="login-button" href='/users/login') Login
