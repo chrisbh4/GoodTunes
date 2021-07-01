@@ -4,12 +4,11 @@ h1 {
     padding: 15px;
     text-transform: uppercase;
     text-align: center;
-    color: white;
-    background-color: rgb(69, 108, 71);;
+    color: ivory;
 }
 
 body {
-    background-color: rgb(230, 228, 219);
+    background-color: #302f2f;
 }
 
 table {
@@ -24,7 +23,7 @@ th {
     border-bottom: 2px solid rgba(232,236,241,1);
     border-collapse: collapse;
     padding: 15px;
-    background-color: rgb(69, 108, 71);
+    background-color: rgb(108, 3, 3);
     font-family: 'Poppins', sans-serif;
     font-size: 14px;
     font-weight: 500;
@@ -73,4 +72,66 @@ button {
     padding: 5px 15px 5px 15px;
     text-align: center;
     background-color: rgba(0, 0, 0, 0);
+}
+
+
+.shelfNameLabel {
+    color: ivory;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+}
+
+.shelfNameInput {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.shelfNameButton {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    border-radius: 20px;
+    padding: 5px 15px 5px 15px;
+    text-align: center;
+    background-color: ivory;
+}
+
+.createShelfForm {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.myShelf {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    background-color: ivory;
+    padding: 15px;
+    margin: 15px;
+    border-radius: 10px;
+}
+
+.shelfItems{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.shelfATag {
+    color: black;
+    text-decoration: none;
+    font-size: 20px;
+    text-align: center;
+}
+
+.deleteShelfButton {
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    border-radius: 20px;
+    padding: 5px 12px 5px 12px;
+    text-align: center;
+    background-color: ivory;
+    margin-top: 5px;
 }

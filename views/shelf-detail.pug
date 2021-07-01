@@ -8,9 +8,9 @@ block scripts
     script(type='module' src='/javascripts/shelfDetail.js')
 
 block content
-    h3(class="shelfName") #{shelf.name}
+    h3(class="shelfName") #{shelf.name} Shelf
     form(class="updateForm"  id=`${shelf.id}`)
-        label(for="name") New Name
+        label(class='name-label' for="name") Edit Shelf Name
         input(type="text" name="name" class="updateInput")
         button(type="submit" class="updateButton") Save
     table
@@ -32,15 +32,16 @@ block content
                     td= `${album.Album.artist}`
                     td= `${album.Album.releaseDate}`
                     td
-                        form(action=`/shelves/remove/${album.id}` method='post')
+                        form(class='remove-button' action=`/shelves/remove/${album.id}` method='post')
                             input(type="hidden" name="_csrf" value= csrfToken)
                             button(type='submit') remove
                     td
                         if !album.listenedTo
-                            form(action=`/shelves/listenedTo/${album.id}` method=`post`)
-                                input(type="hidden" name="_csrf" value= csrfToken)
-                                label(for='listenedTo') listened To
-                                input(type='checkbox' name='listenedTo' value=true unchecked)
-                                button(type='submit') save
+                            div.listenedDiv
+                                form(action=`/shelves/listenedTo/${album.id}` method=`post`)
+                                    input(type="hidden" name="_csrf" value= csrfToken)
+                                    label(for='listenedTo') listened To
+                                    input(class='listened-checkbox' type='checkbox' name='listenedTo' value=true unchecked)
+                                    button(class='listened-button' type='submit') save
                         else
                             p listened

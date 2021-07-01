@@ -42,6 +42,7 @@ router.get('/users/:id(\\d+)', csrfProtection, asyncHandler(async (req, res) => 
     console.log(reviews)
     // Grabs all of the logged in user's Shelves
     const shelves = await Shelf.findAll({ where: { userId } })
+
     res.render('shelves-detail', {
         shelves,
         userId,
