@@ -14,6 +14,7 @@ h3 {
 
 body {
     background-color: rgb(230, 228, 219);
+    width: 95%;
 }
 
 table {
@@ -84,4 +85,34 @@ form > button {
     font-family: 'Poppins', sans-serif;
     font-size: 15px;
     text-align: center;
+}
+
+.bodyContainer {
+    display: inline-flex;
+    max-width: 50%;
+    /* justify-content:  ; */
+
+}
+
+.reviewImg{
+    height: 100px;
+    width: auto;
+}
+
+
+.recentReviews{
+    height: 55px;
+    justify-self: flex-end;
+}
+
+.reviewsH3{
+    height: 26px;
+    margin-top:-0.3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.spacerDiv{
+    width: 10em;
 }
