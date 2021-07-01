@@ -86,6 +86,14 @@ body{
 
 .reviewButton{
     color: black;
+    background-color: ivory;
+  font-size: medium;
+  /* margin-left: 125px; */
+  font-family: 'Poppins', sans-serif;
+  border: 1px solid rgb(82, 79, 79);
+  margin-top: 10px;
+  border-radius: 20px;
+  padding: 5px 15px 5px 15px;
 }
 .mainErrorsContainer{
     /* display: flex;
@@ -102,6 +110,7 @@ body{
     border: 3px solid black;
     margin-top: 5px;
     margin-bottom: 10px;
+    font-family: 'Poppins', sans-serif;
 }
 
 .errorsUl{
@@ -110,4 +119,5 @@ body{
 
 .errorsLi{
     color: ivory;
+    font-family: 'Poppins', sans-serif;
 }

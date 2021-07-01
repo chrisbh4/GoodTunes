@@ -7,10 +7,11 @@ block head
 
 block content
     if errors
-        div
-            ul
+     div(class="mainErrContainer")
+        div(class="errorsContainer")
+            ul(class="errorsUl")
                 each error in errors
-                    li=error
+                    li(class="errorsLi")=error
     div.login-image
         div.login-container
             h3 Login
