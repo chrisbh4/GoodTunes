@@ -28,7 +28,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
                 div.setAttribute('class', `shelf-${json.shelves[json.shelves.length - 1].id}`)
                 myShelfDiv.appendChild(div)
                 const aTag = document.createElement('a')
-                aTag.innerHTML = json.shelves[json.shelves.length - 1].name
+                aTag.innerHTML = shelfName
                 aTag.setAttribute('href', `/shelves/${json.shelves[json.shelves.length - 1].id}`)
                 aTag.setAttribute('class', 'shelfATag')
                 div.appendChild(aTag)
