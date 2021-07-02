@@ -13,8 +13,9 @@ block content
         h3=`Genre: ${album.Genre.name}`
     div(class='releaseDate')
         h3=`Release Date: ${album.releaseDate}`
-    form(action=`/reviews/albums/${album.id}` method="get" class="reviewForm")
-        button( type="submit" class="reviewButton") Add a Review
+    if locals.authenticated
+        form(action=`/reviews/albums/${album.id}` method="get" class="reviewForm")
+            button( type="submit" class="reviewButton") Add a Review
     div(class='songs')
         table
             thead
