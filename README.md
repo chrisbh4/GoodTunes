@@ -4,7 +4,7 @@
 
 # goodTunes
 
-GoodTunes, a [GoodReads] clone, is a music discovery and management application that:
+GoodTunes, a <a href='https://www.goodreads.com//'>GoodReads</a> clone, is a digital music discovery and management application that:
 
 - Allows users to publicly share album reviews that can be viewed by others.
 - Users can "Own" albums into their user database and organize them into custom-labeled shelves.
