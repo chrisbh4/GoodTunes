@@ -48,46 +48,49 @@ npm start
 ## Team
 
 Christian Brown:
+<br />
 <a href=''>
-<img src="https://handydallaireevents.com/wp-content/uploads/2017/06/   Envelope-Gray-Icon.png" width="25" height="25">
+<img src="https://handydallaireevents.com/wp-content/uploads/2017/06/Envelope-Gray-Icon.png" width="25" height="25">
 </a>
 <a href=''>
-<img src="readme-assets/linkedin-brands.svg" width="25" height="25">
+<img src="https://logodix.com/logo/91031.png" width="25" height="25">
 </a>
 <a href=''>
-<img src="readme-assets/github-brands.svg" width="25" height="25">
+<img src="https://icones.pro/wp-content/uploads/2021/06/icone-github-grise.png" width="25" height="25">
 </a>
 
 Brad Sherwood:
+<br />
 <a href=''>
-<img src="https://handydallaireevents.com/wp-content/uploads/2017/06/   Envelope-Gray-Icon.png" width="25" height="25">
+<img src="https://handydallaireevents.com/wp-content/uploads/2017/06/Envelope-Gray-Icon.png" width="25" height="25">
 </a>
 <a href=''>
-<img src="readme-assets/linkedin-brands.svg" width="25" height="25">
+<img src="https://logodix.com/logo/91031.png" width="25" height="25">
 </a>
 <a href=''>
-<img src="readme-assets/github-brands.svg" width="25" height="25">
+<img src="https://icones.pro/wp-content/uploads/2021/06/icone-github-grise.png" width="25" height="25">
 </a>
 
 Owen Iwamasa:
+<br />
 <a href=''>
-<img src="https://handydallaireevents.com/wp-content/uploads/2017/06/   Envelope-Gray-Icon.png" width="25" height="25">
+<img src="https://handydallaireevents.com/wp-content/uploads/2017/06/Envelope-Gray-Icon.png" width="25" height="25">
 </a>
 <a href=''>
-<img src="readme-assets/linkedin-brands.svg" width="25" height="25">
+<img src="https://logodix.com/logo/91031.png" width="25" height="25">
 </a>
 <a href=''>
-<img src="readme-assets/github-brands.svg" width="25" height="25">
+<img src="https://icones.pro/wp-content/uploads/2021/06/icone-github-grise.png" width="25" height="25">
 </a>
 
 Montgomery Flagg:
 <br />
 <a href='monteflagg@gmail.com'>
-<img src="https://handydallaireevents.com/wp-content/uploads/2017/06/   Envelope-Gray-Icon.png" width="25" height="25">
+<img src="https://handydallaireevents.com/wp-content/uploads/2017/06/Envelope-Gray-Icon.png" width="25" height="25">
 </a>
 <a href='https://linkedin.com/in/montgomeryflagg'>
-<img src="readme-assets/linkedin-brands.svg" width="25" height="25">
+<img src="https://logodix.com/logo/91031.png" width="25" height="25">
 </a>
 <a href='https://github.com/theflaggship'>
-<img src="readme-assets/github-brands.svg" width="25" height="25">
+<img src="https://icones.pro/wp-content/uploads/2021/06/icone-github-grise.png" width="25" height="25">
 </a>
