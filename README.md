@@ -41,3 +41,48 @@ npm install
 npm start
 ```
 <br />
+
+- Christian Brown:
+  <a href=''>
+  <img src="https://handydallaireevents.com/wp-content/uploads/2017/06/Envelope-Gray-Icon.png" width="25" height="25">
+  </a>
+  <a href=''>
+  <img src="readme-assets/linkedin-brands.svg" width="25" height="25">
+  </a>
+  <a href=''>
+  <img src="readme-assets/github-brands.svg" width="25" height="25">
+  </a>
+
+- Brad Sherwood:
+  <a href=''>
+  <img src="https://handydallaireevents.com/wp-content/uploads/2017/06/Envelope-Gray-Icon.png" width="25" height="25">
+  </a>
+  <a href=''>
+  <img src="readme-assets/linkedin-brands.svg" width="25" height="25">
+  </a>
+  <a href=''>
+  <img src="readme-assets/github-brands.svg" width="25" height="25">
+  </a>
+
+- Owen Iwamasa:
+  <a href=''>
+  <img src="https://handydallaireevents.com/wp-content/uploads/2017/06/Envelope-Gray-Icon.png" width="25" height="25">
+  </a>
+  <a href=''>
+  <img src="readme-assets/linkedin-brands.svg" width="25" height="25">
+  </a>
+  <a href=''>
+  <img src="readme-assets/github-brands.svg" width="25" height="25">
+  </a>
+
+- Montgomery Flagg:
+  <a href='monteflagg@gmail.com'>
+  <img src="https://handydallaireevents.com/wp-content/uploads/2017/06/Envelope-Gray-Icon.png" width="25" height="25">
+  </a>
+  <a href='https://linkedin.com/in/montgomeryflagg'>
+  <img src="readme-assets/linkedin-brands.svg" width="25" height="25">
+  </a>
+  <a href='https://github.com/theflaggship'>
+  <img src="readme-assets/github-brands.svg" width="25" height="25">
+  </a>
+
