@@ -55,7 +55,7 @@ Christian Brown:
 <a href=''>
 <img src="https://logodix.com/logo/91031.png" width="25" height="25">
 </a>
-<a href=''>
+<a href='https://github.com/chrisbh4'>
 <img src="https://icones.pro/wp-content/uploads/2021/06/icone-github-grise.png" width="25" height="25">
 </a>
 
@@ -67,7 +67,7 @@ Brad Sherwood:
 <a href=''>
 <img src="https://logodix.com/logo/91031.png" width="25" height="25">
 </a>
-<a href=''>
+<a href='https://github.com/BradSherwood24'>
 <img src="https://icones.pro/wp-content/uploads/2021/06/icone-github-grise.png" width="25" height="25">
 </a>
 
@@ -79,7 +79,7 @@ Owen Iwamasa:
 <a href=''>
 <img src="https://logodix.com/logo/91031.png" width="25" height="25">
 </a>
-<a href=''>
+<a href='https://github.com/owiwamasa'>
 <img src="https://icones.pro/wp-content/uploads/2021/06/icone-github-grise.png" width="25" height="25">
 </a>
 
