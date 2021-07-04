@@ -81,6 +81,7 @@ Owen Iwamasa:
 </a>
 
 Montgomery Flagg:
+<br />
 <a href='monteflagg@gmail.com'>
 <img src="https://handydallaireevents.com/wp-content/uploads/2017/06/   Envelope-Gray-Icon.png" width="25" height="25">
 </a>
