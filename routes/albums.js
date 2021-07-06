@@ -4,9 +4,9 @@ const db = require('../db/models');
 const { csrfProtection, asyncHandler } = require('./utils');
 const { User, Review, Album, Song, Genre, Shelf } = db
 const { requireAuth } = require('../auth')
+const { Op } = require('sequelize')
 
 router.get('/', csrfProtection, asyncHandler(async (req, res) => {
-    console.log("some messeage")
     if (req.session.auth) {
         const { userId } = req.session.auth
         const albums = await Album.findAll({
@@ -14,10 +14,10 @@ router.get('/', csrfProtection, asyncHandler(async (req, res) => {
             order: ['title']
         })
         const shelves = await Shelf.findAll({
-            where:{userId}
+            where: { userId }
         })
         res.render('all-albums', { albums, shelves, csrfToken: req.csrfToken() })
-    }else {
+    } else {
         const albums = await Album.findAll({
             include: Genre,
             order: ['title']
@@ -42,6 +42,26 @@ router.get('/:id(\\d+)', asyncHandler(async (req, res) => {
         include: User
     })
     res.render('album', { album, songs, reviews })
+}))
+
+router.get('/search', csrfProtection, asyncHandler(async (req, res) => {
+    const { search } = req.query
+    console.log(`-----------------${search}-----------------`)
+    const albums = await Album.findAll({
+        where: {
+            [Op.or]: [
+                { title: { [Op.iLike]: '%' + search + '%' } },
+                { artist: { [Op.iLike]: '%' + search + '%' } },
+            ]
+        },
+        include: Genre
+    })
+    const { userId } = req.session.auth
+    const shelves = await Shelf.findAll({
+        where: { userId }
+    })
+    console.log(`-----------------${albums}-----------------`)
+    res.render('all-albums', { albums, shelves, csrfToken: req.csrfToken() })
 }))
 
 

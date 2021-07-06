@@ -1,5 +1,8 @@
 body {
-  background-color: #5B4028;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 .navbar {
   background-color: rgb(108, 3, 3);
@@ -7,20 +10,15 @@ body {
   font-size: 16px;
   color: white;
   font-family: 'Poppins', sans-serif;
-  /* display: flex;
+  display: flex;
   justify-content: space-between;
-  align-content: space-around; */
-  display: grid;
+  align-content: space-around;
+  /* display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr;
   grid-template-areas:
-  "left mid right";
-  position: relative;
-}
-
-.navbar-nonuser-buttons {
-  border-radius: 20px;
-  padding: 5px 15px 5px 15px;
+  "left mid right"; */
+  /* position: relative; */
 }
 
 .login-button {
@@ -37,7 +35,9 @@ body {
   border-radius: 20px;
   padding: 5px 15px 5px 15px;
   margin-top: 5px;*/
-  grid-area: right;
+  /* grid-area: right; */
+  margin-left: 10px;
+  white-space: nowrap;
 }
 
 .signup-button {
@@ -56,8 +56,8 @@ body {
   border-radius: 20px;
   padding: 5px 15px 5px 15px;
   margin-right: 5px; */
-  grid-area: right;
-  margin-right: 10px;
+  /* grid-area: right; */
+  white-space: nowrap;
 }
 
 .take-a-tour {
@@ -69,7 +69,8 @@ body {
   margin-top: 10px;
   border-radius: 20px;
   padding: 5px 15px 5px 15px;
-  grid-area: right;
+  /* grid-area: right; */
+  white-space: nowrap;
 }
 
 .logout-button {
@@ -81,20 +82,22 @@ body {
   margin-top: 10px;
   border-radius: 20px;
   padding: 5px 15px 5px 15px;
-  grid-area: right;
-  margin-left: 8px;
+  /* grid-area: right; */
+  margin-left: 10px;
+  white-space: nowrap;
 }
 
 .my-collection-button {
   background-color: ivory;
   font-size: medium;
-  margin-left: 130px;
+  margin-left: 75px;
   font-family: 'Poppins', sans-serif;
   border: 1px solid rgb(82, 79, 79);
   margin-top: 10px;
   border-radius: 20px;
   padding: 5px 15px 5px 15px;
-  grid-area: right;
+  white-space: nowrap;
+  /* grid-area: right; */
 }
 
 .logo {
@@ -102,8 +105,8 @@ body {
   height: 64px;
   grid-area: left;
   box-sizing: border-box;
-  position: absolute;
-  margin-top: -2px;
+  position: relative;
+  margin-top: 0px;
   margin-left: 35px;
 }
 
@@ -120,20 +123,23 @@ body {
   border-radius: 20px;
   padding: 5px 15px 5px 15px;
   margin-top: 12px; */
-  grid-area: left;
-  margin-left: 35px;
+  /* grid-area: left; */
+  margin-left: 45px;
+  white-space: nowrap;
 }
 
 .navbar-text {
   font-family: 'Poppins', sans-serif;
   font-size: x-large;
   font-weight: lighter;
+  white-space: nowrap;
 }
 
 .left-navbar {
     display:flex;
     justify-content: left;
     align-items:center;
+    width: 365px;
 }
 
 .middle-navbar {
@@ -144,15 +150,42 @@ body {
 
 .right-navbar {
     display: flex;
-    justify-content: end;
+    justify-content: right;
     align-items:center;
+    padding-right: 65px;
+    width: 310px;
 }
 
-.right-navbar-nonuser {
-    margin-left: 55px;
+.user-buttons {
+  padding-right: 55px;
 }
+
+
+
+/* .right-navbar-nonuser {
+    margin-left: 55px;
+} */
 
 .left-navbar a {
     width: 113px;
     height: 65px;
 }
+
+.search form{
+  margin-left: 20px;
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+}
+
+.searchInput {
+  border-radius: 20px;
+  padding: 10px;
+}
+
+/* .searchButton {
+  border-radius: 19px;
+  margin-left: -28px;
+  background-color: ivory;
+  font-size: 20px;
+} */

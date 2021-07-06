@@ -119,6 +119,7 @@ form select {
 .reviewButton{
     font-size: 15px;
     border-radius: 20px;
+    padding: 5px 15px 5px 15px;
     font-family: 'Poppins', sans-serif;
     background-color: ivory;
     border: 2px solid rgb(82, 79, 79);
