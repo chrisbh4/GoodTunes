@@ -1,64 +1,64 @@
 body {
-    background-color: #302f2f;
-  }
+  background-color: #302f2f;
+}
 
 table {
-    width: 100%;
-    border: 2px solid#302f2f;
-    padding: 10px;
-    border-collapse: collapse;
-    border-spacing: 0 5px;
-    background-color: #302f2f;
+  width: 100%;
+  border: 2px solid#302f2f;
+  padding: 10px;
+  border-collapse: collapse;
+  border-spacing: 0 5px;
+  background-color: #302f2f;
 }
 
 .all-albums-div {
-    margin: 5px;
+  margin: 5px;
 }
 
 th {
-    border-bottom: 2px solid rgba(232,236,241,1);
-    border-collapse: collapse;
-    padding: 15px;
-    background-color: maroon;
-    font-family: 'Poppins', sans-serif;
-    font-size: 14px;
-    font-weight: 500;
-    text-transform: uppercase;
-    color: white;
+  border-bottom: 2px solid rgba(232, 236, 241, 1);
+  border-collapse: collapse;
+  padding: 15px;
+  background-color: maroon;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: white;
 }
 
 tbody tr {
-    border-bottom: 4px solid rgba(195, 26, 222, 0);
-    border-top: 4px solid rgba(196,26,222,0);
-    background-color: rgb(255, 255, 255);
+  border-bottom: 4px solid rgba(195, 26, 222, 0);
+  border-top: 4px solid rgba(196, 26, 222, 0);
+  background-color: rgb(255, 255, 255);
 }
 
 tbody tr:nth-of-type(2n) {
-    background-color: rgb(245, 243, 232);
-    border-bottom: 4px solid rgba(195, 26, 222, 0);
-    border-top: 4px solid rgba(196,26,222,0);
+  background-color: rgb(245, 243, 232);
+  border-bottom: 4px solid rgba(195, 26, 222, 0);
+  border-top: 4px solid rgba(196, 26, 222, 0);
 }
 
 td {
-    text-align: center;
-    font-family: 'Poppins', sans-serif;
-    font-size: 16px;
-    font-weight: 200;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 200;
 }
 
 a {
-    font-family: 'Poppins', sans-serif;
-    font-size: 16px;
-    font-weight: 200;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 200;
 }
 
 img {
-    margin-top: 30px;
-    margin-bottom: 20px;
-    width: 300px;
-    height: 300px;
-    object-fit: cover;
-    /* box-shadow: 0 0 20px 4px rgb(230, 143, 247);, */
+  margin-top: 30px;
+  margin-bottom: 20px;
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  /* box-shadow: 0 0 20px 4px rgb(230, 143, 247);, */
 }
 
 /* .add-td {
@@ -66,61 +66,74 @@ img {
 } */
 
 .form-container {
-    display: flex;
+  display: flex;
 }
 
 form select {
-    font-family: 'Poppins', sans-serif;
-    font-size: 16px;
-    margin: 10px;
-    border-radius: 10px;
-    padding: 9px 25px 9px 25px;
-    border: 1px solid black;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  margin: 10px;
+  border-radius: 10px;
+  padding: 9px 25px 9px 25px;
+  border: 1px solid black;
 }
 
 .form-container button {
-    font-family: 'Poppins', sans-serif;
-    font-size: 14px;
-    border-radius: 20px;
-    padding: 10px 25px 10px 25px;
-    text-align: center;
-    background-color: rgba(0, 0, 0, 0);
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  border-radius: 20px;
+  padding: 10px 25px 10px 25px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0);
 }
 
 .albumTitle {
-    text-align: center;
-    font-family: 'Poppins', sans-serif;
-    font-size: 15px;
-    color: ivory;
-
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  color: ivory;
 }
 
-.genre, .releaseDate, .albumImg {
-    text-align: center;
-    font-family: 'Poppins', sans-serif;
-    font-size: 15px;
-    color: ivory;
+.genre,
+.releaseDate,
+.albumImg {
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  color: ivory;
 }
 
 .songs {
-    font-family: 'Poppins', sans-serif;
-    font-size: 25px;
-    text-align: center;
-    margin-top: 25px;
-    margin-bottom: 25px;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  text-align: left;
+  /* margin-top: 25px;
+  margin-bottom: 25px; */
+  color: ivory;
 }
 
-.reviewForm{
-    display: flex;
-    justify-content: center;
-
+.reviewForm {
+  display: flex;
+  justify-content: center;
 }
 
-.reviewButton{
-    font-size: 15px;
-    border-radius: 20px;
-    padding: 5px 15px 5px 15px;
-    font-family: 'Poppins', sans-serif;
-    background-color: ivory;
-    border: 2px solid rgb(82, 79, 79);
+.reviewButton {
+  font-size: 15px;
+  border-radius: 20px;
+  padding: 5px 15px 5px 15px;
+  font-family: "Poppins", sans-serif;
+  background-color: ivory;
+  border: 2px solid rgb(82, 79, 79);
+}
+
+.albumContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+p {
+  padding: none;
+  margin-bottom: 5px;
 }
