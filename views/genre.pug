@@ -1,0 +1,54 @@
+extends layout.pug
+block head
+    link(rel='stylesheet' href='/stylesheets/all-albums.css')
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+block content
+    if locals.authenticated
+        div(class='all-albums-div')
+            table
+                thead
+                    tr
+                        th(class='add-head') Add to Shelf
+                        th(class='image-head') Image
+                        th(class='title-head') Title
+                        th(class='artist-head') Artist
+                        th(class='release-date-head') Release Date
+                tbody
+                    each album in albums
+                        tr
+                            td.add-td
+                                div(class='form-container')
+                                    form(action=`/shelves/own/${album.id}` method='post' class='shelfForm')
+                                        input(type="hidden" name="_csrf" value= csrfToken)
+                                        select(name='shelfId' class='shelfSelector')
+                                            each shelf in shelves
+                                                option( name='shelf' value=`${shelf.id}`)= `${shelf.name}`
+                                        button(type='submit' class='addSubmit') Add
+                            td
+                                div(class='albums-img')
+                                    a(href=`/albums/${album.id}`)
+                                        img(src=`${album.imgSrc}`)
+                            td: a(href=`/albums/${album.id}`) #{album.title}
+                            td= `${album.artist}`
+                            td= `${album.releaseDate}`
+    else
+        div(class='all-albums-div')
+            table
+                thead
+                    tr
+                        th(class='image-head') Image
+                        th(class='title-head') Title
+                        th(class='artist-head') Artist
+                        th(class='release-date-head') Release Date
+                tbody
+                    each album in albums
+                        tr
+                            td
+                                div(class='albums-img')
+                                    a(href=`/albums/${album.id}`)
+                                        img(src=`${album.imgSrc}`)
+                            td: a(href=`/albums/${album.id}`) #{album.title}
+                            td= `${album.artist}`
+                            td= `${album.releaseDate}`

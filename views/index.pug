@@ -13,6 +13,10 @@ block head
 
 block content
     div(class="bodyContainer")
+        div.genres
+            each genre in genres
+                a(href=`/genres/${genre.id}`)
+                    div(class="genresList" id=`picture-${genre.name}`) #{genre.name}
         h3 Top 10 Owned Albums
         div(class='Albums')
             each album in albums
@@ -20,21 +24,16 @@ block content
                     a(href=`/albums/${album.id}`)
                         img(src=`${album.imgSrc}`)
         div(class="spacerDiv")
-        div(class='recentReviews')
-                h3(class='reviewsH3') Most Recent Reviews
-                table
-                    thead
-                        tr
-                            th Album
-                            th UserName
-                            th Comment
-                            th Rating
-                    tbody
+            div(class='recentReviews')
+                    h3.reviews-header Most Recent Reviews
+                    div.review-container
                         each review in reviews
-                            tr
-                                td
+                            div.user-review
+                                div.review-img-div
                                     a(href=`/albums/${review.Album.id}`)
                                         img(class="reviewImg" src=`${review.Album.imgSrc}`)
-                                td= `${review.User.username}`
-                                td= `${review.comment}`
-                                td= `${review.rating}`
+                                div.review-data
+                                    div.review-data-comment-username
+                                        div.review-comment= `\"${review.comment}\"`
+                                        div.review-username= `-${review.User.username}`
+                                    div.review-rating= `${review.rating} / 10`

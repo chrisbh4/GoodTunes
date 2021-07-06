@@ -8,14 +8,14 @@ h1 {
 
 h3 {
   font-family: "Poppins", sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   padding: 15px;
   text-transform: uppercase;
   text-align: center;
   color: ivory;
 }
 
-table {
+/* table {
   width: 100%;
   padding: 10px;
   border-collapse: collapse;
@@ -53,7 +53,7 @@ td {
   font-family: "Poppins", sans-serif;
   font-size: 16px;
   font-weight: 200;
-}
+} */
 
 a {
   font-family: "Poppins", sans-serif;
@@ -67,6 +67,7 @@ img {
   width: 300px;
   height: 300px;
   object-fit: cover;
+  transition: width 0.2s ease-in-out 0.1s, height 0.2s ease-in-out 0.1s, box-shadow 0.2s ease-in-out 0.1s;
   /* box-shadow: 0 0 20px 4px rgb(230, 143, 247);, */
 }
 
@@ -92,16 +93,25 @@ form > button {
 } */
 
 .reviewImg {
-  height: 200px;
-  width: 200px;
+  margin: 10px;
+  width: 250px;
+  height: 250px;
   object-fit: cover;
-  box-sizing: border-box;
 }
 
-/* .reviewH3 {
-    height: 26px;
-    margin-top: -1px;
+/* .reviewImg:hover {
+  width: 280px;
+  height: 280px;
+  box-shadow: 0 0 6px 6px rgb(255, 255, 255);
 } */
+
+.spacerDiv {
+  position: relative;
+}
+
+.reviews-header {
+  margin-top: 15px;
+}
 
 .Albums {
   display: flex;
@@ -113,4 +123,67 @@ form > button {
 
 .Albums img {
   margin: 10px;
+}
+
+/* .Albums img:hover {
+  width: 310px;
+  height: 310px;
+  box-shadow: 0 0 10px 6px rgba(255, 255, 255, 1);
+} */
+
+.review-container {
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  scrollbar-width: none;
+}
+
+.user-review {
+  display: flex;
+  flex-direction: column;
+}
+
+.review-data {
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  text-align: center;
+  color: white;
+}
+
+.review-data-comment-username {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 100;
+  margin-bottom: 4px;
+}
+
+.review-comment{
+  font-style: italic;
+}
+
+.review-username {
+  margin-left: 8px;
+}
+
+.genres {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.genresList {
+  border: 1px solid black;
+  border-radius: 20px;
+  margin: 20px 8px 10px 8px;
+  padding: 20px 40px;
+  color: black;
+  background-color: ivory;
+}
+
+.genres a {
+  text-decoration: none;
 }
