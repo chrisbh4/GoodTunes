@@ -49,7 +49,7 @@ npm start
 
 Christian Brown:
 <br />
-<a href=''>
+<a href='chrismbh4@gmail.com'>
 <img src="https://i.imgur.com/jLLwTjh.png" width="25" height="25">
 </a>
 <a href=''>
