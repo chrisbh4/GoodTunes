@@ -15,7 +15,7 @@ block content
                         th(class='title-head') Title
                         th(class='artist-head') Artist
                         th(class='release-date-head') Release Date
-                        th(class='genre') Genre
+                        //- th(class='genre') Genre
                 tbody
                     each album in albums
                         tr
@@ -30,11 +30,11 @@ block content
                             td
                                 div(class='albums-img')
                                     a(href=`/albums/${album.id}`)
-                                        img(src=`${album.imgSrc}`)
-                            td: a(href=`/albums/${album.id}`) #{album.title}
-                            td= `${album.artist}`
-                            td= `${album.releaseDate}`
-                            td= `${album.Genre.name}`
+                                        img(src=`${album.cover_image}`)
+                            td: a(href=`/albums/${album.id}`) #{album.title.split(" - ")[1]}
+                            td= `${album.title.split(" - ")[0]}`
+                            td= `${album.year}`
+                            //- td= `${album.genres[0]}`
     else
         div(class='all-albums-div')
             table
@@ -44,15 +44,15 @@ block content
                         th(class='title-head') Title
                         th(class='artist-head') Artist
                         th(class='release-date-head') Release Date
-                        th(class='genre') Genre
+                        //- th(class='genre') Genre
                 tbody
                     each album in albums
                         tr
                             td
                                 div(class='albums-img')
                                     a(href=`/albums/${album.id}`)
-                                        img(src=`${album.imgSrc}`)
-                            td: a(href=`/albums/${album.id}`) #{album.title}
-                            td= `${album.artist}`
-                            td= `${album.releaseDate}`
-                            td= `${album.Genre.name}`
+                                        img(src=`${album.cover_image}`)
+                            td: a(href=`/albums/${album.id}`) #{album.title.split(" - ")[1]}
+                            td= `${album.title.split(" - ")[0]}`
+                            td= `${album.year}`
+                            //- td= `${album.genres[0]}`

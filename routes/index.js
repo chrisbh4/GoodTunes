@@ -23,7 +23,7 @@ router.get('/', csrfProtection, asyncHandler(async function (req, res, next) {
 }));
 
 router.get('/test', csrfProtection, asyncHandler(async function (req, res, next) {
-    var url = `https://api.discogs.com/releases/100`
+    var url = `https://api.discogs.com/releases/100?key=${process.env.DC_KEY}&secret=${process.env.DC_SECRET}`
     var apiKey = `${process.env.DC_KEY}`
     var apiSecret = `${process.env.DC_SECRET}`
 
