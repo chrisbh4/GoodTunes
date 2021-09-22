@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
 const db = require('../db/models');
 const { csrfProtection, asyncHandler } = require('./utils');
 const { User, Review, Album, Song, Genre, Shelf } = db
@@ -46,6 +47,9 @@ router.get('/:id(\\d+)', asyncHandler(async (req, res) => {
 
 router.get('/search', csrfProtection, asyncHandler(async (req, res) => {
     const { search } = req.query
+    // const searchResults = await fetch(`https://api.discogs.com/database/search?q=${search}&key=${process.env.DC_KEY}&secret=${process.env.DC_SECRET}`)
+    // const results = await searchResults.json()
+    // res.send(results)
     console.log(`-----------------${search}-----------------`)
     const albums = await Album.findAll({
         where: {
