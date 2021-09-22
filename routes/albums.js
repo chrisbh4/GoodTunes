@@ -29,20 +29,43 @@ router.get('/', csrfProtection, asyncHandler(async (req, res) => {
 
 router.get('/:id(\\d+)', asyncHandler(async (req, res) => {
     const id = req.params.id
-    const album = await Album.findByPk(id, {
-        include: Genre
-    })
-    const songs = await Song.findAll({
-        where:
-            { albumId: album.id }
-    })
-    const reviews = await Review.findAll({
-        where: {
-            albumId: album.id
-        },
-        include: User
-    })
-    res.render('album', { album, songs, reviews })
+    var url = `https://api.discogs.com/releases/${id}`
+    var apiKey = `${process.env.DC_KEY}`
+    var apiSecret = `${process.env.DC_SECRET}`
+
+    var response = await fetch(
+      url,
+      {
+        "headers": {
+          "key": apiKey,
+          "secret": apiSecret
+        }
+      }
+    )
+    const album = await response.json()
+
+    //TODO: Add Reviews
+
+    res.render('album', { album })
+
+
+
+
+    // const id = req.params.id
+    // const album = await Album.findByPk(id, {
+    //     include: Genre
+    // })
+    // const songs = await Song.findAll({
+    //     where:
+    //         { albumId: album.id }
+    // })
+    // const reviews = await Review.findAll({
+    //     where: {
+    //         albumId: album.id
+    //     },
+    //     include: User
+    // })
+    // res.render('album', { album, songs, reviews })
 }))
 
 router.get('/search', csrfProtection, asyncHandler(async (req, res) => {
