@@ -29,43 +29,60 @@ router.get('/', csrfProtection, asyncHandler(async (req, res) => {
 
 router.get('/:id(\\d+)', asyncHandler(async (req, res) => {
     const id = req.params.id
-    const album = await Album.findByPk(id, {
-        include: Genre
-    })
-    const songs = await Song.findAll({
-        where:
-            { albumId: album.id }
-    })
-    const reviews = await Review.findAll({
-        where: {
-            albumId: album.id
-        },
-        include: User
-    })
-    res.render('album', { album, songs, reviews })
+    var url = `https://api.discogs.com/masters/${id}?key=${process.env.DC_KEY}&secret=${process.env.DC_SECRET}`
+    var response = await fetch(url)
+    const album = await response.json()
+
+    //TODO: Add Reviews
+    // res.send(album)
+    res.render('album', { album })
+
+
+
+
+    // const id = req.params.id
+    // const album = await Album.findByPk(id, {
+    //     include: Genre
+    // })
+    // const songs = await Song.findAll({
+    //     where:
+    //         { albumId: album.id }
+    // })
+    // const reviews = await Review.findAll({
+    //     where: {
+    //         albumId: album.id
+    //     },
+    //     include: User
+    // })
+    // res.render('album', { album, songs, reviews })
 }))
 
 router.get('/search', csrfProtection, asyncHandler(async (req, res) => {
     const { search } = req.query
-    // const searchResults = await fetch(`https://api.discogs.com/database/search?q=${search}&key=${process.env.DC_KEY}&secret=${process.env.DC_SECRET}`)
-    // const results = await searchResults.json()
-    // res.send(results)
-    console.log(`-----------------${search}-----------------`)
-    const albums = await Album.findAll({
-        where: {
-            [Op.or]: [
-                { title: { [Op.iLike]: '%' + search + '%' } },
-                { artist: { [Op.iLike]: '%' + search + '%' } },
-            ]
-        },
-        include: Genre
-    })
+    const searchResults = await fetch(`https://api.discogs.com/database/search?q=${search}&key=${process.env.DC_KEY}&secret=${process.env.DC_SECRET}`)
+    const results = await searchResults.json()
+    const albums = results.results.filter(result => result.type === "master")
     const { userId } = req.session.auth
     const shelves = await Shelf.findAll({
         where: { userId }
     })
-    console.log(`-----------------${albums}-----------------`)
     res.render('all-albums', { albums, shelves, csrfToken: req.csrfToken() })
+    // console.log(`-----------------${search}-----------------`)
+    // const albums = await Album.findAll({
+    //     where: {
+    //         [Op.or]: [
+    //             { title: { [Op.iLike]: '%' + search + '%' } },
+    //             { artist: { [Op.iLike]: '%' + search + '%' } },
+    //         ]
+    //     },
+    //     include: Genre
+    // })
+    // const { userId } = req.session.auth
+    // const shelves = await Shelf.findAll({
+    //     where: { userId }
+    // })
+    // console.log(`-----------------${albums}-----------------`)
+    // res.render('all-albums', { albums, shelves, csrfToken: req.csrfToken() })
 }))
 
 

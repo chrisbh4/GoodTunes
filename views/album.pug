@@ -6,13 +6,13 @@ block head
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
 block content
     div(class='albumTitle')
-        h1= `${album.title} by ${album.artist}`
+        h1= `${album.title} by ${album.artists[0].name}`
     div(class='albumImg')
-        img(src=album.imgSrc)
+        img(src=album.images[0].resource_url)
     div(class='genre')
-        h3=`Genre: ${album.Genre.name}`
+        h3=`Genre: ${album.genres[0]}`
     div(class='releaseDate')
-        h3=`Release Date: ${album.releaseDate}`
+        h3=`Release Date: ${album.year}`
     if locals.authenticated
         form(action=`/reviews/albums/${album.id}` method="get" class="reviewForm")
             button( type="submit" class="reviewButton") Add a Review
@@ -23,20 +23,20 @@ block content
                     th Track Number
                     th Title
             tbody
-                each song in songs
+                each song in album.tracklist
                     tr
-                        td= `${song.trackNum}`
+                        td= `${song.position}`
                         td= `${song.title}`
-    div(class='reviews')
-        table
-            thead
-                tr
-                    th UserName
-                    th Comment
-                    th Rating
-            tbody
-                each review in reviews
-                    tr
-                        td= `${review.User.username}`
-                        td= `${review.comment}`
-                        td= `${review.rating}`
+    //- div(class='reviews')
+    //-     table
+    //-         thead
+    //-             tr
+    //-                 th UserName
+    //-                 th Comment
+    //-                 th Rating
+    //-         tbody
+    //-             each review in reviews
+    //-                 tr
+    //-                     td= `${review.User.username}`
+    //-                     td= `${review.comment}`
+    //-                     td= `${review.rating}`
