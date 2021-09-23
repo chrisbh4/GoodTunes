@@ -5,9 +5,15 @@ html(lang="en")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     title GoodTunes - #{title}
     link(rel='stylesheet' href='/stylesheets/navbar.css')
+    link(rel='stylesheet' href='/stylesheets/footer.css')
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+    link(
+    rel="stylesheet"
+    href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+    integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+    crossorigin="anonymous")
     block head
     block scripts
   body
@@ -15,13 +21,12 @@ html(lang="en")
       div.left-navbar
         a(href="/")
           img(class="logo" src="https://i.imgur.com/sf38Uhb.png")
-        div.albums-directory
-          form(class='albums-page' action='/albums/' method='get')
-            button(class='albums-page-button' type='submit') Album Directory
+        //- div.albums-directory
+        //-   form(class='albums-page' action='/albums/' method='get')
+        //-     button(class='albums-page-button' type='submit') Album Directory
         div.search
           form(action="/albums/search" method='get')
-            input(class='searchInput' type="search" name='search' placeholder='Search...')
-            //- button(class='searchButton' type='submit') ⌕
+            input(class='searchInput' type="search" name='search' placeholder='Search for albums...')
       if locals.authenticated
         div.middle-navbar
           span(class='navbar-text') Welcome #{user.username}
@@ -40,6 +45,46 @@ html(lang="en")
           form(method='get' action='/users/login')
             button(class="login-button" type='submit') Login
     block content
+    block foot
+      div.footer-content
+        div.footer-header Development Team
+        div.footer-info-container
+            div.footer-info
+                div.footer-title Christian Brown
+                div.footer-links
+                    a(href='chrismbh4@gmail.com')
+                        i.far.fa-envelope
+                    a(href='https://www.linkedin.com/')
+                        i.fab.fa-linkedin
+                    a(href='https://github.com/chrisbh4')
+                        i.fab.fa-github
+            div.footer-info
+                div.footer-title Brad Sherwood
+                div.footer-links
+                    a(href='bradsherwood@gmail.com')
+                        i.far.fa-envelope
+                    a(href='https://www.linkedin.com/')
+                        i.fab.fa-linkedin
+                    a(href='https://github.com/BradSherwood24')
+                        i.fab.fa-github
+            div.footer-info
+                div.footer-title Montgomery Flagg
+                div.footer-links
+                    a(href='monteflagg@gmail.com')
+                        i.far.fa-envelope
+                    a(href='https://linkedin.com/in/montgomeryflagg')
+                        i.fab.fa-linkedin
+                    a(href='https://github.com/theflaggship')
+                        i.fab.fa-github
+            div.footer-info
+                div.footer-title Owen Iwamasa
+                div.footer-links
+                    a(href='owiwamasa@gmail.com')
+                        i.far.fa-envelope
+                    a(href='https://www.linkedin.com/in/owen-iwamasa-6ab3a9166/')
+                        i.fab.fa-linkedin
+                    a(href='https://github.com/owiwamasa')
+                        i.fab.fa-github
 
   //-  span(class='navbar-text')
         a(class="login-button" href='/users/login') Login

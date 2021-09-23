@@ -1,4 +1,5 @@
 extends layout.pug
+
 block head
     link(rel="stylesheet", href="/stylesheets/index.css")
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,11 +14,11 @@ block head
 
 block content
     div(class="bodyContainer")
-        div.genres
-            each genre in genres
-                a(href=`/genres/${genre.id}`)
-                    div(class="genresList" id=`picture-${genre.name}`) #{genre.name}
-        h3 Top 10 Owned Albums
+        //- div.genres
+        //-     each genre in genres
+        //-         a(href=`/genres/${genre.id}`)
+        //-             div(class="genresList" id=`picture-${genre.name}`) #{genre.name}
+        h3.top-owned-h3 Top 10 Owned Albums
         div(class='Albums')
             each album in albums
                 div(class="topAlbumList")
@@ -37,3 +38,4 @@ block content
                                         div.review-comment= `\"${review.comment}\"`
                                         div.review-username= `-${review.User.username}`
                                     div.review-rating= `${review.rating} / 10`
+    block content
