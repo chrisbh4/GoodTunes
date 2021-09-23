@@ -9,33 +9,21 @@ body {
   width: 100%;
   font-size: 16px;
   color: white;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   display: flex;
   justify-content: space-between;
   align-content: space-around;
-  /* display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr;
-  grid-template-areas:
-  "left mid right"; */
-  /* position: relative; */
+  height: 100px;
 }
 
 .login-button {
   background-color: ivory;
   font-size: medium;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   border: 1px solid rgb(82, 79, 79);
   margin-top: 10px;
   border-radius: 20px;
   padding: 5px 15px 5px 15px;
-  /* color: snow;
-  text-decoration: none;
-  border: 1px solid snow;
-  border-radius: 20px;
-  padding: 5px 15px 5px 15px;
-  margin-top: 5px;*/
-  /* grid-area: right; */
   margin-left: 10px;
   white-space: nowrap;
 }
@@ -44,19 +32,11 @@ body {
   background-color: ivory;
   margin-left: 150px;
   font-size: medium;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   border: 1px solid rgb(82, 79, 79);
   margin-top: 10px;
   border-radius: 20px;
   padding: 5px 15px 5px 15px;
-  /* color: snow;
-  text-decoration: none;
-  border: 1px solid snow;
-  margin-left: 5px;
-  border-radius: 20px;
-  padding: 5px 15px 5px 15px;
-  margin-right: 5px; */
-  /* grid-area: right; */
   white-space: nowrap;
 }
 
@@ -64,25 +44,22 @@ body {
   background-color: ivory;
   font-size: medium;
   margin-left: 15px;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   border: 1px solid rgb(82, 79, 79);
   margin-top: 10px;
   border-radius: 20px;
   padding: 5px 15px 5px 15px;
-  /* grid-area: right; */
   white-space: nowrap;
 }
 
 .logout-button {
   background-color: ivory;
   font-size: medium;
-  /* margin-left: 125px; */
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   border: 1px solid rgb(82, 79, 79);
   margin-top: 10px;
   border-radius: 20px;
   padding: 5px 15px 5px 15px;
-  /* grid-area: right; */
   margin-left: 10px;
   white-space: nowrap;
 }
@@ -91,7 +68,7 @@ body {
   background-color: ivory;
   font-size: medium;
   margin-left: 75px;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   border: 1px solid rgb(82, 79, 79);
   margin-top: 10px;
   border-radius: 20px;
@@ -113,65 +90,58 @@ body {
 .albums-page-button {
   background-color: ivory;
   font-size: medium;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   border: 1px solid rgb(82, 79, 79);
   margin-top: 10px;
   border-radius: 20px;
   padding: 5px 15px 5px 15px;
-  /* font-family: 'Poppins', sans-serif;
-  background-color: rgb(225, 199, 165);
-  border-radius: 20px;
-  padding: 5px 15px 5px 15px;
-  margin-top: 12px; */
-  /* grid-area: left; */
   margin-left: 45px;
   white-space: nowrap;
 }
 
 .navbar-text {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: x-large;
   font-weight: lighter;
   white-space: nowrap;
 }
 
 .left-navbar {
-    display:flex;
-    justify-content: left;
-    align-items:center;
-    width: 365px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  padding-right: 30px;
+  /* width: 365px; */
 }
 
 .middle-navbar {
-    display: flex;
-    justify-content: center;
-    align-items:center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .right-navbar {
-    display: flex;
-    justify-content: right;
-    align-items:center;
-    padding-right: 65px;
-    width: 310px;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  padding-right: 65px;
+  width: 520px;
 }
 
 .user-buttons {
   padding-right: 55px;
 }
 
-
-
 /* .right-navbar-nonuser {
     margin-left: 55px;
 } */
 
 .left-navbar a {
-    width: 113px;
-    height: 65px;
+  width: 113px;
+  height: 65px;
 }
 
-.search form{
+.search form {
   margin-left: 20px;
   display: flex;
   flex-direction: row;
@@ -181,11 +151,10 @@ body {
 .searchInput {
   border-radius: 20px;
   padding: 10px;
+  margin-left: 60px;
+  width: 350px;
 }
 
-/* .searchButton {
-  border-radius: 19px;
-  margin-left: -28px;
-  background-color: ivory;
-  font-size: 20px;
-} */
+.searchInput:focus {
+  outline: none;
+}
