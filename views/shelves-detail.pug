@@ -16,9 +16,13 @@ block content
     div.shelfItems
         each shelf in shelves
             div(class=`shelf-${shelf.id} myShelf`)
-                div(class=`shelf-${shelf.id}`)
-                    a(class='shelfATag' href=`/shelves/${shelf.id}`) #{shelf.name}
-                    button(class=`deleteShelfButton` id=`${shelf.id}`) Delete
+                a(class='shelfATag' href=`/shelves/${shelf.id}`) #{shelf.name}
+                div(class=`shelf-${shelf.id}`).shelf-info
+                    each album in shelf.dataValues.Albums
+                        div(class='album')
+                            a(href=`/albums/${album.id}`)
+                                img(src=`${album.dataValues.imgSrc}`)
+                button(class=`deleteShelfButton` id=`${shelf.id}`) Delete
 
     h1 My Reviews
     div(class='reviews')

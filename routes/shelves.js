@@ -4,6 +4,7 @@ const db = require('../db/models');
 const { csrfProtection, asyncHandler } = require('./utils');
 const { check, validationResult } = require('express-validator');
 const { loginUser, logoutUser, requireAuth } = require('../auth');
+const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
 const user = require('../db/models/user');
 const { User, Shelf, Review, Album, AlbumList } = db;
 
@@ -31,7 +32,6 @@ Path: shelves/user:id/
 // Make sure the user can only access its own shelves and not anyone else's in the database
 
 router.get('/users/:id(\\d+)', csrfProtection, asyncHandler(async (req, res) => {
-    console.log("inside users id")
     const userId = parseInt(req.params.id, 10)
     const reviews = await Review.findAll({
         where: {
@@ -39,9 +39,20 @@ router.get('/users/:id(\\d+)', csrfProtection, asyncHandler(async (req, res) => 
         },
         include: Album
     })
-    console.log(reviews)
     // Grabs all of the logged in user's Shelves
-    const shelves = await Shelf.findAll({ where: { userId } })
+    // findAll shelves for a user and include all of the albums in the shelf
+    const shelves = await Shelf.findAll({
+        where: {
+            userId
+        },
+        include: [{
+            model: Album
+        }]
+    })
+    // const shelfAlbums = shelves[0].dataValues.Albums[0].dataValues.imgSrc
+
+    // const shelves = await Shelf.findAll({ where: { userId }, include: AlbumList})
+
 
     res.render('shelves-detail', {
         shelves,
@@ -54,7 +65,7 @@ router.get('/users/:id(\\d+)', csrfProtection, asyncHandler(async (req, res) => 
 
 
 router.post('/users/:id(\\d+)', asyncHandler(async (req, res, next) => {
-    console.log('in route!')
+    // console.log('in route!')
     const userId = parseInt(req.params.id, 10)
     const name = req.body.name
     await Shelf.create({
@@ -72,20 +83,23 @@ router.get('/:id(\\d+)', csrfProtection, asyncHandler(async (req, res) => {
     const albumList = await AlbumList.findAll({
         where: {
             shelfId: id
-        },
-        include: Album
+        }
     })
+    const albums = []
+    for (let i = 0; i < albumList.length; i++) {
+        let album = await Album.findByPk(albumList[i].albumId)
+        albums.push(album)
+    }
 
     res.render('shelf-detail', {
         shelf,
-        albumList,
+        albums,
         csrfToken: req.csrfToken()
     })
 
 }));
 
 router.delete('/:id(\\d+)', asyncHandler(async (req, res) => {
-    console.log('IN DELETE ROUTE')
     const id = req.params.id
     const shelf = await Shelf.findByPk(id, {
         include: User
@@ -96,7 +110,6 @@ router.delete('/:id(\\d+)', asyncHandler(async (req, res) => {
 }));
 
 router.patch('/update/:id(\\d+)', asyncHandler(async (req, res) => {
-    console.log('Hitting Route')
     const id = req.params.id
     const shelf = await Shelf.findByPk(id, {
         include: User
@@ -109,12 +122,29 @@ router.patch('/update/:id(\\d+)', asyncHandler(async (req, res) => {
 router.post('/own/:id(\\d+)', csrfProtection, asyncHandler(async (req, res) => {
     const id = req.params.id
     const { shelfId } = req.body
-    console.log(shelfId)
+    const { userId } = req.session.auth
     await AlbumList.create({ shelfId: shelfId, albumId: id })
     const album = await Album.findByPk(id)
-    album.ownerCount++
-    album.save()
-    res.redirect('/albums/')
+    if (!album) {
+        var url = `https://api.discogs.com/masters/${id}?key=${process.env.DC_KEY}&secret=${process.env.DC_SECRET}`
+        var response = await fetch(url)
+        const newAlbum = await response.json()
+        const createdAlbum = await Album.create({
+            id: id,
+            title: newAlbum.title,
+            imgSrc: newAlbum.images[0].resource_url,
+            releaseDate: newAlbum.year,
+            artist: newAlbum.artists[0].name,
+            genreId: 1,
+            ownerCount: 1
+        })
+        await createdAlbum.save()
+        res.redirect(`/shelves/users/${userId}`)
+    } else {
+        album.ownerCount++
+        album.save()
+        res.redirect(`/shelves/users/${userId}`)
+    }
 }))
 
 router.post('/remove/:id(\\d+)', csrfProtection, asyncHandler(async (req, res) => {
