@@ -12,7 +12,6 @@ block content
         label(class='shelfNameLabel') Shelf Name:
         input(type="text" name="name" class='shelfNameInput')
         button(type="submit" class='shelfNameButton') Create Shelf
-    h1 My Shelves
     div.shelfItems
         each shelf in shelves
             div(class=`shelf-${shelf.id} myShelf`)

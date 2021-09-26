@@ -5,38 +5,49 @@ block head
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
 block content
-    div(class='albumTitle')
-        h1= `${album.title} by ${album.artists[0].name}`
-    div(class='albumImg')
+    div.albumBackground
         img(src=album.images[0].resource_url)
-    div(class='genre')
-        h3=`Genre: ${album.genres[0]}`
-    div(class='releaseDate')
-        h3=`Release Date: ${album.year}`
-    if locals.authenticated
-        form(action=`/reviews/albums/${album.id}` method="get" class="reviewForm")
-            button( type="submit" class="reviewButton") Add a Review
+    div.albumCard
+        div(class='albumImg')
+            img(src=album.images[0].resource_url)
+        div(class='albumInfo')
+            div(class='albumTitle')
+                h1= `${album.title}`
+            div(class='albumArtist')
+                h3= `By ${album.artists[0].name}`
+            div(class='genre')
+                h3=`Genre: ${album.genres[0]}`
+            div(class='releaseDate')
+                h3=`Release Date: ${album.year}`
+            if locals.authenticated
+                form(action=`/reviews/albums/${album.id}` method="get" class="reviewForm")
+                    button( type="submit" class="reviewButton") Add a Review
     div(class='songs')
-        table
-            thead
-                tr
-                    th Track Number
-                    th Title
-            tbody
-                each song in album.tracklist
+        h2 Tracklist
+        each song in album.tracklist
+            div.songInfo
+                div.songTitle #{song.position}.  #{song.title}
+                div.songDuration #{song.duration}
+    if album.videos
+        div.video
+            .videosHeader Music Videos
+            .videoContainer
+                .videoScroll
+                    each video in album.videos
+                        .videoDiv
+                            div.videoTitle #{video.title}
+                            iframe(width="420" height="315" src=`https://www.youtube.com/embed/${video.uri.slice(32)}`)
+    if reviews.length > 0
+        div(class='reviews')
+            table
+                thead
                     tr
-                        td= `${song.position}`
-                        td= `${song.title}`
-    //- div(class='reviews')
-    //-     table
-    //-         thead
-    //-             tr
-    //-                 th UserName
-    //-                 th Comment
-    //-                 th Rating
-    //-         tbody
-    //-             each review in reviews
-    //-                 tr
-    //-                     td= `${review.User.username}`
-    //-                     td= `${review.comment}`
-    //-                     td= `${review.rating}`
+                        th UserName
+                        th Comment
+                        th Rating
+                tbody
+                    each review in reviews
+                        tr
+                            td= `${review.User.username}`
+                            td= `${review.comment}`
+                            td= `${review.rating}`
