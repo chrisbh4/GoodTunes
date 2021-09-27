@@ -8,7 +8,7 @@ html(lang="en")
     link(rel='stylesheet' href='/stylesheets/footer.css')
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     link(
     rel="stylesheet"
     href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
@@ -26,7 +26,7 @@ html(lang="en")
         //-     button(class='albums-page-button' type='submit') Album Directory
         div.search
           form(action="/albums/search" method='get')
-            input(class='searchInput' type="search" name='search' placeholder='Search for albums...')
+            input(class='searchInput' type="search" name='search' placeholder='  Search for artists or albums...')
       if locals.authenticated
         div.middle-navbar
           span(class='navbar-text') Welcome #{user.username}
@@ -52,38 +52,38 @@ html(lang="en")
             div.footer-info
                 div.footer-title Christian Brown
                 div.footer-links
-                    a(href='chrismbh4@gmail.com')
+                    a(target="_blank" rel="noreferrer" href='mailto:chrismbh4@gmail.com')
                         i.far.fa-envelope
-                    a(href='https://www.linkedin.com/in/christian-brown-8770311ba/')
+                    a(target="_blank" rel="noreferrer" href='https://www.linkedin.com/in/christian-brown-8770311ba/')
                         i.fab.fa-linkedin
-                    a(href='https://github.com/chrisbh4')
+                    a(target="_blank" rel="noreferrer" href='https://github.com/chrisbh4')
                         i.fab.fa-github
             div.footer-info
                 div.footer-title Brad Sherwood
                 div.footer-links
-                    a(href='bradsherwood@gmail.com')
+                    a(target="_blank" rel="noreferrer" href='mailto:bradsherwood@gmail.com')
                         i.far.fa-envelope
-                    a(href='https://www.linkedin.com/in/bradley-sherwood-36a92615a/')
+                    a(target="_blank" rel="noreferrer" href='https://www.linkedin.com/in/bradley-sherwood-36a92615a/')
                         i.fab.fa-linkedin
-                    a(href='https://github.com/BradSherwood24')
+                    a(target="_blank" rel="noreferrer" href='https://github.com/BradSherwood24')
                         i.fab.fa-github
             div.footer-info
                 div.footer-title Montgomery Flagg
                 div.footer-links
-                    a(href='monteflagg@gmail.com')
+                    a(target="_blank" rel="noreferrer" href='mailto:monteflagg@gmail.com')
                         i.far.fa-envelope
-                    a(href='https://linkedin.com/in/montgomeryflagg')
+                    a(target="_blank" rel="noreferrer" href='https://linkedin.com/in/montgomeryflagg')
                         i.fab.fa-linkedin
-                    a(href='https://github.com/theflaggship')
+                    a(target="_blank" rel="noreferrer" href='https://github.com/theflaggship')
                         i.fab.fa-github
             div.footer-info
                 div.footer-title Owen Iwamasa
                 div.footer-links
-                    a(href='owiwamasa@gmail.com')
+                    a(target="_blank" rel="noreferrer" href='mailto:owiwamasa@gmail.com')
                         i.far.fa-envelope
-                    a(href='https://www.linkedin.com/in/owen-iwamasa-6ab3a9166/')
+                    a(target="_blank" rel="noreferrer" href='https://www.linkedin.com/in/owen-iwamasa-6ab3a9166/')
                         i.fab.fa-linkedin
-                    a(href='https://github.com/owiwamasa')
+                    a(target="_blank" rel="noreferrer" href='https://github.com/owiwamasa')
                         i.fab.fa-github
 
   //-  span(class='navbar-text')
