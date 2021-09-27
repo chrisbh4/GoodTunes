@@ -33,7 +33,6 @@ router.get('/:id(\\d+)', asyncHandler(async (req, res) => {
     var response = await fetch(url)
     const album = await response.json()
     console.log(album.tracklist[0])
-
     const reviews = await Review.findAll({
         where: {
             albumId: album.id
@@ -67,11 +66,16 @@ router.get('/search', csrfProtection, asyncHandler(async (req, res) => {
     const searchResults = await fetch(`https://api.discogs.com/database/search?q=${search}&key=${process.env.DC_KEY}&secret=${process.env.DC_SECRET}`)
     const results = await searchResults.json()
     const albums = results.results.filter(result => result.type === "master")
-    const { userId } = req.session.auth
-    const shelves = await Shelf.findAll({
-        where: { userId }
-    })
-    res.render('all-albums', { albums, shelves, csrfToken: req.csrfToken() })
+    if (req.session.auth) {
+        const { userId } = req.session.auth
+        const shelves = await Shelf.findAll({
+            where: { userId }
+        })
+        res.render('all-albums', { albums, shelves, csrfToken: req.csrfToken() })
+    } else {
+        res.render('all-albums', { albums, csrfToken: req.csrfToken() })
+    }
+
     // console.log(`-----------------${search}-----------------`)
     // const albums = await Album.findAll({
     //     where: {

@@ -19,9 +19,24 @@ const reviewValidators = [
 
 router.get('/albums/:id(\\d+)', csrfProtection, asyncHandler(async (req, res) => {
     const albumId = req.params.id
-    const album = await Album.findByPk(albumId, {
-        include: [Genre]
-    })
+    const album = await Album.findByPk(albumId)
+    if (!album) {
+        var url = `https://api.discogs.com/masters/${id}?key=${process.env.DC_KEY}&secret=${process.env.DC_SECRET}`
+        var response = await fetch(url)
+        const newAlbum = await response.json()
+        const createdAlbum = await Album.create({
+            id: id,
+            title: newAlbum.title,
+            imgSrc: newAlbum.images[0].resource_url,
+            releaseDate: newAlbum.year,
+            artist: newAlbum.artists[0].name,
+            genreId: 1,
+            ownerCount: 0,
+        })
+        await createdAlbum.save()
+    } else {
+        album.save()
+    }
     res.render('review', { csrfToken: req.csrfToken(), album })
 }))
 
@@ -29,9 +44,7 @@ router.post('/albums/:id(\\d+)', reviewValidators, csrfProtection, asyncHandler(
     const { userId } = req.session.auth
     const albumId = req.params.id
     const { comment, rating } = req.body
-    const album = await Album.findByPk(albumId, {
-        include: [Genre]
-    })
+    const album = await Album.findByPk(albumId)
     const validatorErrors = validationResult(req)
     if(validatorErrors.isEmpty()){
         await Review.create({ comment, rating, albumId, userId });
