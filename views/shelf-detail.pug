@@ -23,14 +23,14 @@ block content
                 th Remove
                 th Listened To
         tbody
-            each album in albumList
+            each album in albums
                 tr
                     td
-                        a(href=`/albums/${album.Album.id}`)
-                            img(src=`${album.Album.imgSrc}`)
-                    td: a(href=`/albums/${album.Album.id}`) #{album.Album.title}
-                    td= `${album.Album.artist}`
-                    td= `${album.Album.releaseDate}`
+                        a(href=`/albums/${album.id}`)
+                            img(src=`${album.imgSrc}`)
+                    td: a(href=`/albums/${album.id}`) #{album.title}
+                    td= `${album.artist}`
+                    td= `${album.releaseDate}`
                     td
                         form(class='remove-button' action=`/shelves/remove/${album.id}` method='post')
                             input(type="hidden" name="_csrf" value= csrfToken)
