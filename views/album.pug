@@ -38,16 +38,24 @@ block content
                             div.videoTitle #{video.title}
                             iframe(width="420" height="315" src=`https://www.youtube.com/embed/${video.uri.slice(32)}`)
     if reviews.length > 0
-        div(class='reviews')
-            table
-                thead
-                    tr
-                        th UserName
-                        th Comment
-                        th Rating
-                tbody
-                    each review in reviews
-                        tr
-                            td= `${review.User.username}`
-                            td= `${review.comment}`
-                            td= `${review.rating}`
+        div.reviews-title= `Reviews`
+        div(class='review-container')
+            each review in reviews
+                div.user-review
+                    div.review-data-comment-username
+                        div.review-username= `${review.User.username}`
+                        div.review-date= `Date: ${review.updatedAt.toString().slice(4,15)}`
+                    div.review-rating= `Rating - ${review.rating} / 10`
+                    div.review-comment= `\"${review.comment}\"`
+            //- table
+            //-     thead
+            //-         tr
+            //-             th UserName
+            //-             th Comment
+            //-             th Rating
+            //-     tbody
+            //-         each review in reviews
+            //-             tr
+            //-                 td= `${review.User.username}`
+            //-                 td= `${review.comment}`
+            //-                 td= `${review.rating}`
