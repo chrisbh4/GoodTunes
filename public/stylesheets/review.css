@@ -46,6 +46,9 @@ body {
 }
 
 .addReview {
+  text-align: center;
+  width: 500px;
+  overflow-wrap: break-word;
   color: ivory;
   display: flex;
   justify-content: center;
