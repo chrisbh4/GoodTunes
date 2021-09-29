@@ -120,11 +120,11 @@ body {
   height: 600px;
 }
 
-.albumImg {
+.reviewAlbumImg {
     margin-right: 150px;
 }
 
-.albumBackground {
+.reviewAlbumBackground {
     position: relative;
     width: 100%;
     height: 600px;
@@ -134,7 +134,7 @@ body {
     align-items: center;
 }
 
-.albumBackground img {
+.reviewAlbumBackground img {
     width: 100%;
     height: auto;
     position: absolute;
