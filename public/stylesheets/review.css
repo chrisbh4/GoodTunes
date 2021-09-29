@@ -1,6 +1,6 @@
-* {
+/* * {
   font-family: "Poppins", sans-serif;
-}
+} */
 
 body {
   background-color: #302f2f;
@@ -10,6 +10,7 @@ body {
   display: flex;
   justify-content: center;
   color: ivory;
+  font-family: "Poppins", sans-serif;
 }
 
 .imgContainer {
@@ -32,6 +33,7 @@ body {
   color: ivory;
   margin-top: -10px;
   font-weight: 400;
+  font-family: "Poppins", sans-serif;
 }
 
 .reviewImg {
@@ -54,16 +56,22 @@ body {
   justify-content: center;
   padding-bottom: 30px;
   font-weight: 400;
+  font-family: "Poppins", sans-serif;
 }
 .reviewArena {
   width: 400px;
   height: 150px;
   color: black;
   border: 1px solid black;
+  resize: none;
+  border-radius: 15px;
+  padding: 10px;
+  font-family: "Poppins", sans-serif;
 }
 
 .reviewRating {
   color: black;
+  font-family: "Poppins", sans-serif;
 }
 
 .reviewLabel {
@@ -72,23 +80,40 @@ body {
   font-weight: 400;
   margin-left: 22px;
   margin-bottom: 10px;
+  font-family: "Poppins", sans-serif;
 }
 
 .reviewInput {
   color: black;
   border: 1px solid black;
   font-family: "Poppins", sans-serif;
+  border-radius: 15px;
+  padding: 5px;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+}
+
+.reviewInput:focus,
+.reviewArena:focus {
+  outline: none;
 }
 
 .reviewButton {
-  color: ivory;
-  background-color: black;
+  color: black;
+  background-color: ivory;
   font-size: medium;
   font-family: "Poppins", sans-serif;
-  border: 1px solid rgb(82, 79, 79);
+  border: 1px solid black;
   margin-top: 10px;
   border-radius: 20px;
   padding: 5px 15px 5px 15px;
+}
+
+.reviewButton:hover {
+  cursor: pointer;
+  background-color: rgb(108, 3, 3);
+  color: ivory;
+  border: 1px solid ivory;
 }
 
 .errorsContainer {
@@ -121,20 +146,22 @@ body {
   top: 100px;
   width: 100%;
   height: 600px;
+  font-family: "Poppins", sans-serif;
 }
 
 .reviewAlbumBackground {
-    position: relative;
-    width: 100%;
-    height: 600px;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  position: relative;
+  width: 100%;
+  height: 600px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
 }
 
 .reviewAlbumBackground img {
-    width: 100%;
-    height: auto;
-    position: absolute;
-  }
+  width: 100%;
+  height: auto;
+  position: absolute;
+}

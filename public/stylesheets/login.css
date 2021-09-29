@@ -36,10 +36,20 @@ body {
   justify-content: space-between;
   font-size: large;
   font-family: "Poppins", sans-serif;
+  border: none;
+  /* padding: 5px; */
+  border-radius: 15px;
 }
 
 div > input {
   margin-left: 10px;
+  border-radius: 15px;
+  padding: 5px;
+  border: 1px solid black;
+}
+
+div > input:focus {
+  outline: none;
 }
 
 h3 {
@@ -71,6 +81,13 @@ p {
   font-family: "Poppins", sans-serif;
   background-color: rgb(108, 3, 3);
   color: ivory;
+  border: 2px solid rgb(108, 3, 3);
+}
+
+.submit-button:hover {
+  color: rgb(108, 3, 3);
+  background-color: ivory;
+  cursor: pointer;
 }
 
 .errorsContainer {

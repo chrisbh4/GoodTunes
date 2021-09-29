@@ -1,101 +1,116 @@
 body {
-    background-color: #5B4028;
-    position: relative;
+  background-color: #5b4028;
+  position: relative;
 }
 
 .signup-container {
-    position: absolute;
-    background-color: ivory;
-    margin-left: 800px;
-    margin-top: 250px;
-    padding: 25px;
-    box-shadow: 0 0 4px 4px rgb(50, 50, 50);
-    border-radius: 10px;
+  position: absolute;
+  background-color: ivory;
+  margin-left: 800px;
+  margin-top: 250px;
+  padding: 25px;
+  box-shadow: 0 0 4px 4px rgb(50, 50, 50);
+  border-radius: 10px;
 }
 
 .signup-image {
-    background-image: url('https://i.imgur.com/4gHt3Ci.jpg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-    min-width: 1200px;
-    min-height: 850px;
-    max-width: 1300px;
-    max-height: 950px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+  background-image: url("https://i.imgur.com/4gHt3Ci.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  min-width: 1200px;
+  min-height: 850px;
+  max-width: 1300px;
+  max-height: 950px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.username-input, .password-input, .confirmPassword-input{
-    padding: 15px;
-    text-align: left;
-    display: flex;
-    justify-content: space-between;
-    font-size: large;
-    font-family: 'Poppins', sans-serif;
+.username-input,
+.password-input,
+.confirmPassword-input {
+  padding: 15px;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  font-size: large;
+  font-family: "Poppins", sans-serif;
 }
 
 div > input {
-    margin-left: 10px;
+  margin-left: 10px;
+  border-radius: 15px;
+  padding: 5px;
+  border: 1px solid black;
+}
+
+div > input:focus {
+  outline: none;
 }
 
 .p-container {
-    margin-top: 30px;
+  margin-top: 30px;
 }
 
 p {
-    font-family: 'Poppins', sans-serif;
-    margin-left: 60px;
+  font-family: "Poppins", sans-serif;
+  margin-left: 60px;
 }
 
 h3 {
-    font-family: 'Poppins', sans-serif;
-    font-size: x-large;
-    margin-left: 129px;
-    font-weight: bold;
+  font-family: "Poppins", sans-serif;
+  font-size: x-large;
+  margin-left: 129px;
+  font-weight: bold;
 }
 
 .submit-button {
-    margin-top: 10px;
-    padding: 5px 15px 5px 15px;
-    font-size: large;
-    display: flex;
-    justify-content: space-between;
-    font-size: large;
-    border-radius: 20px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    font-family: 'Poppins', sans-serif;
-    background-color: rgb(108, 3, 3);
-    color: ivory;
-    font-weight: bold;
+  margin-top: 10px;
+  padding: 5px 15px 5px 15px;
+  font-size: large;
+  display: flex;
+  justify-content: space-between;
+  font-size: large;
+  border-radius: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: "Poppins", sans-serif;
+  background-color: rgb(108, 3, 3);
+  color: ivory;
+  font-weight: bold;
+  border: 2px solid rgb(108, 3, 3);
 }
 
-.errorsContainer{
-    width: 300px;
-    /* display: flex; */
-    /* justify-content: center; */
-    margin-left: auto;
-    margin-right: auto;
-    background-color: rgb(108, 3, 3);
-    border: 3px solid black;
-    margin-top: 5px;
-    margin-bottom: 10px;
-    font-family: 'Poppins', sans-serif;
+.submit-button:hover {
+  color: rgb(108, 3, 3);
+  background-color: ivory;
+  cursor: pointer;
 }
 
-.errorsUl{
-    color: ivory;
-
+.errorsContainer {
+  width: 300px;
+  /* display: flex; */
+  /* justify-content: center; */
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgb(108, 3, 3);
+  border: 3px solid black;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  font-family: "Poppins", sans-serif;
 }
 
-.errorsLi{
-    color: ivory;
+.errorsUl {
+  color: ivory;
+}
+
+.errorsLi {
+  color: ivory;
 }
 
 .loginLink {
-    color: black
+  color: black;
 }

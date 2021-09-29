@@ -23,7 +23,7 @@ block content
                 form(action=`/reviews/albums/${album.id}` method="get" class="reviewForm")
                     button( type="submit" class="reviewButton") Add a Review
     div(class='songs')
-        h2 Tracklist
+        .songsHeader Tracklist
         each song in album.tracklist
             div.songInfo
                 div.songTitle #{song.position}.  #{song.title}
