@@ -36,7 +36,7 @@ block content
                                 div.review-data
                                     div.review-data-comment-username
                                         div.review-username= `${review.User.username}`
-                                        div.review-date= `Date: ${review.updatedAt.toString().slice(4,15)}`
-                                    div.review-rating= `Rating - ${review.rating} / 10`
+                                        div.review-date= `${review.updatedAt.toString().slice(4,15)}`
                                     div.review-comment= `\"${review.comment}\"`
+                                    div.review-rating= `${review.rating} / 10`
     block content
