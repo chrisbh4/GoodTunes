@@ -3,26 +3,28 @@ block head
     link(rel="stylesheet", href="/stylesheets/review.css")
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 block content
-    h1( class='title' )=`Add a review for: ${album.title} by ${album.artist}`
-    div(class='imgContainer')
-        img( src=`${album.imgSrc}` class='reviewImg')
-    if errors
-     div(class="mainErrContainer")
-        div(class="errorsContainer")
-            ul(class="errorsUl")
-                each error in errors
-                    li(class="errorsLi")=error
-    div(class="reviewContainer")
-        h3(class="addReview") Add a Review Here:
-        form( class='reviewForm' action=`/reviews/albums/${album.id}` method='post')
-            input(type="hidden" name='_csrf' value=csrfToken)
-            div(class='comment')
-                h5(for="comment" class='reviewComment') Comment:
-                textarea(class="reviewArena" name="comment" maxlength='255' value=comment )
-            div(class='rating' class="reviewRating")
-                h5(for='rating' class='reviewLabel') Rating 1/10:
-                input(type='number' class='reviewInput' name='rating' value=rating)
-            div
-                button(class='reviewButton' type='submit') Submit
+    div.albumBackground
+        img(src=album.imgSrc)
+    div(class=`pageContainer`)
+        div(class='imgContainer')
+            img( src=`${album.imgSrc}` class='reviewImg')
+        if errors
+         div(class="mainErrContainer")
+            div(class="errorsContainer")
+                ul(class="errorsUl")
+                    each error in errors
+                        li(class="errorsLi")=error
+        div(class="reviewContainer")
+            h2(class="addReview")= `Add a review for: ${album.title} by ${album.artist}`
+            form( class='reviewForm' action=`/reviews/albums/${album.id}` method='post')
+                input(type="hidden" name='_csrf' value=csrfToken)
+                div(class='comment')
+                    h5(for="comment" class='reviewComment') Comment:
+                    textarea(class="reviewArena" name="comment" maxlength='255' value=comment )
+                div(class='rating' class="reviewRating")
+                    h5(for='rating' class='reviewLabel') Rating 1 to 10:
+                    input(type='number' class='reviewInput' name='rating' value=rating)
+                div
+                    button(class='reviewButton' type='submit') Submit

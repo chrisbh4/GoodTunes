@@ -1,119 +1,141 @@
-*{
-    font-family: 'Poppins', sans-serif
+* {
+  font-family: "Poppins", sans-serif;
 }
 
-body{
-    background-color:#302f2f ;
+body {
+  background-color: #302f2f;
 }
 
-
-
-.title{
-    display: flex;
-    justify-content: center;
-    color: ivory;
+.title {
+  display: flex;
+  justify-content: center;
+  color: ivory;
 }
 
-.imgContainer{
-    display: flex;
-    justify-content: center;
-    padding-bottom: 10px;
-    /* align-items: center; */
+.imgContainer {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 10px;
+  height: 350px;
+  width: auto;
+  /* align-items: center; */
 }
 
-.reviewForm{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.reviewForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.reviewComment{
-    color: black;
-    margin-top: -10px;
+.reviewComment {
+  color: ivory;
+  margin-top: -10px;
+  font-weight: 400;
 }
 
-.reviewImg{
-    border: 1px solid white;
+.reviewImg {
+  border: 1px solid white;
 }
 
-.reviewContainer{
-    width: 300px;
-    height: 350px;
-    border: 5px solid black;
-    border-radius: 20px;
-    padding: 20px;
-    position: relative;
-    margin-left: auto;
-    margin-right: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background-color: ivory;
+.reviewContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 50px;
 }
 
-.addReview{
-    color: black;
-    display:flex;
-    justify-content: center;
-    padding-bottom: 30px;
-    text-decoration: underline;
-
+.addReview {
+  color: ivory;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 30px;
+  font-weight: 400;
 }
-.reviewArena{
-   width: 225px;
-   height: 90px;
-   color: black;
-   border: 1px solid black;
-
+.reviewArena {
+  width: 400px;
+  height: 150px;
+  color: black;
+  border: 1px solid black;
 }
 
-
-.reviewRating{
-    color: black;
-    margin-top: 10px;
+.reviewRating {
+  color: black;
 }
 
-.reviewLabel{
-    color: black;
-    margin-top: 10px;
+.reviewLabel {
+  color: ivory;
+  margin-top: 20px;
+  font-weight: 400;
+  margin-left: 22px;
+  margin-bottom: 10px;
 }
 
-.reviewInput{
-    color: black;
-    border: 1px solid black;
+.reviewInput {
+  color: black;
+  border: 1px solid black;
+  font-family: "Poppins", sans-serif;
 }
 
-.reviewButton{
-    color: black;
-    background-color: ivory;
+.reviewButton {
+  color: ivory;
+  background-color: black;
   font-size: medium;
-  /* margin-left: 125px; */
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   border: 1px solid rgb(82, 79, 79);
   margin-top: 10px;
   border-radius: 20px;
   padding: 5px 15px 5px 15px;
 }
 
-.errorsContainer{
-    width: 200px;
-    /* display: flex; */
-    /* justify-content: center; */
-    margin-left: auto;
-    margin-right: auto;
-    background-color: rgb(108, 3, 3);
-    border: 3px solid black;
-    margin-top: 5px;
-    margin-bottom: 10px;
-    font-family: 'Poppins', sans-serif;
+.errorsContainer {
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgb(108, 3, 3);
+  border: 3px solid black;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  font-family: "Poppins", sans-serif;
 }
 
-.errorsUl{
-    color: ivory;
+.errorsUl {
+  color: ivory;
 }
 
-.errorsLi{
-    color: ivory;
-    font-family: 'Poppins', sans-serif;
+.errorsLi {
+  color: ivory;
+  font-family: "Poppins", sans-serif;
 }
+
+.pageContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.653);
+  top: 100px;
+  width: 100%;
+  height: 600px;
+}
+
+.albumImg {
+    margin-right: 150px;
+}
+
+.albumBackground {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.albumBackground img {
+    width: 100%;
+    height: auto;
+    position: absolute;
+  }
