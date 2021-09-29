@@ -100,7 +100,6 @@ body {
 
 .errorsContainer {
   width: 200px;
-  /* display: flex; */
   margin-left: auto;
   margin-right: auto;
   background-color: rgb(108, 3, 3);
