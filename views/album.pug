@@ -23,7 +23,7 @@ block content
                 form(action=`/reviews/albums/${album.id}` method="get" class="reviewForm")
                     button( type="submit" class="reviewButton") Add a Review
     div(class='songs')
-        h2 Tracklist
+        .songsHeader Tracklist
         each song in album.tracklist
             div.songInfo
                 div.songTitle #{song.position}.  #{song.title}
@@ -44,9 +44,9 @@ block content
                 div.user-review
                     div.review-data-comment-username
                         div.review-username= `${review.User.username}`
-                        div.review-date= `Date: ${review.updatedAt.toString().slice(4,15)}`
-                    div.review-rating= `Rating - ${review.rating} / 10`
+                        div.review-date= `${review.updatedAt.toString().slice(4,15)}`
                     div.review-comment= `\"${review.comment}\"`
+                    div.review-rating= `${review.rating} / 10`
             //- table
             //-     thead
             //-         tr

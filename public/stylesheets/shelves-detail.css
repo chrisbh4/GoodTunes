@@ -84,6 +84,13 @@ button {
 .shelfNameInput {
   margin-left: 10px;
   margin-right: 10px;
+  border-radius: 15px;
+  padding: 5px;
+  border: none;
+}
+
+.shelfNameInput:focus {
+  outline: none;
 }
 
 .shelfNameButton {
@@ -93,6 +100,13 @@ button {
   padding: 5px 15px 5px 15px;
   text-align: center;
   background-color: ivory;
+  border: 1px solid ivory;
+}
+
+.shelfNameButton:hover {
+  background-color: rgb(108, 3, 3);
+  color: ivory;
+  cursor: pointer;
 }
 
 .createShelfForm {
@@ -126,6 +140,7 @@ button {
   text-decoration: none;
   font-size: 20px;
   text-align: center;
+  font-weight: bolder;
 }
 
 .deleteShelfButton {
@@ -136,6 +151,14 @@ button {
   text-align: center;
   background-color: ivory;
   margin-top: 5px;
+  border: 2px solid black;
+}
+
+.deleteShelfButton:hover {
+  background-color: rgb(108, 3, 3);
+  color: ivory;
+  border: 2px solid rgb(108, 3, 3);
+  cursor: pointer;
 }
 
 .shelf-info {

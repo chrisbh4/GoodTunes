@@ -26,6 +26,7 @@ body {
   padding: 5px 15px 5px 15px;
   margin-left: 10px;
   white-space: nowrap;
+  border: 1px solid ivory;
 }
 
 .signup-button {
@@ -38,6 +39,7 @@ body {
   border-radius: 20px;
   padding: 5px 15px 5px 15px;
   white-space: nowrap;
+  border: 1px solid ivory;
 }
 
 .take-a-tour {
@@ -50,6 +52,7 @@ body {
   border-radius: 20px;
   padding: 5px 15px 5px 15px;
   white-space: nowrap;
+  border: 1px solid ivory;
 }
 
 .logout-button {
@@ -62,6 +65,7 @@ body {
   padding: 5px 15px 5px 15px;
   margin-left: 10px;
   white-space: nowrap;
+  border: 1px solid ivory;
 }
 
 .my-collection-button {
@@ -74,7 +78,18 @@ body {
   border-radius: 20px;
   padding: 5px 15px 5px 15px;
   white-space: nowrap;
+  border: 1px solid ivory;
   /* grid-area: right; */
+}
+
+.my-collection-button:hover,
+.logout-button:hover,
+.take-a-tour:hover,
+.signup-button:hover,
+.login-button:hover {
+  background-color: rgb(108, 3, 3);
+  color: ivory;
+  cursor: pointer;
 }
 
 .logo {
@@ -85,6 +100,7 @@ body {
   position: relative;
   margin-top: 0px;
   margin-left: 35px;
+  border: none;
 }
 
 .albums-page-button {
@@ -154,6 +170,7 @@ body {
   padding: 10px;
   margin-left: 60px;
   width: 350px;
+  border: none;
 }
 
 .searchInput:focus {
