@@ -74,5 +74,13 @@ router.post('/delete/:id(\\d+)', csrfProtection, asyncHandler(async (req, res) =
     res.redirect(`/shelves/users/${review.userId}`)
 }))
 
+router.post('/delete/all', csrfProtection, asyncHandler(async (req, res) => {
+    const reviews = await Review.findAll()
+    reviews.forEach(async review => {
+        await review.destroy()
+    })
+    res.redirect(`/`)
+}))
+
 
 module.exports = router;
