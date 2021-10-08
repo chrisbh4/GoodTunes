@@ -13,7 +13,6 @@ router.get('/', csrfProtection, asyncHandler(async function (req, res, next) {
     order: [['ownerCount', 'DESC']],
     limit: 10
   })
-  console.log('======================', albums)
   const reviews = await Review.findAll({
     order: [['createdAt', 'DESC']],
     limit: 20,

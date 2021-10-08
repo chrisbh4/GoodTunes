@@ -90,6 +90,7 @@ body {
   background-color: rgb(108, 3, 3);
   color: ivory;
   cursor: pointer;
+  border: 2px solid ivory;
 }
 
 .logo {

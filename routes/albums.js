@@ -32,7 +32,6 @@ router.get('/:id(\\d+)', asyncHandler(async (req, res) => {
     var url = `https://api.discogs.com/masters/${id}?key=${process.env.DC_KEY}&secret=${process.env.DC_SECRET}`
     var response = await fetch(url)
     const album = await response.json()
-    console.log(album.tracklist[0])
     const reviews = await Review.findAll({
         where: {
             albumId: album.id

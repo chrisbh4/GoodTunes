@@ -163,7 +163,6 @@ router.post('/remove/:id(\\d+)/:albumId(\\d+)', csrfProtection, asyncHandler(asy
             shelfId, albumId
         }
     })
-    console.log('+++++++++++++++++', albumList)
     const album = await Album.findByPk(albumId)
     album.ownerCount--
     album.save()

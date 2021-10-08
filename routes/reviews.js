@@ -59,7 +59,6 @@ router.post('/albums/:id(\\d+)', reviewValidators, csrfProtection, asyncHandler(
 router.post('/edits/:id(\\d+)', csrfProtection, asyncHandler(async (req, res) => {
     const id = req.params.id
     const { comment, rating } = req.body
-    console.log(comment, rating)
     const review = await Review.findByPk(id)
     review.comment = comment
     review.rating = rating

@@ -46,7 +46,6 @@ window.addEventListener("DOMContentLoaded", (event) => {
         createShelfInput.value = ''
     })
     deleteShelfButtons.forEach(button => {
-        console.log(button)
         button.addEventListener('click', (event) => {
             const shelfId = event.target.id
 
