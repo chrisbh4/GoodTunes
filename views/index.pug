@@ -24,7 +24,7 @@ block content
                     a(href=`/albums/${album.id}`)
                         img(src=`${album.imgSrc}`)
         div(class="spacerDiv")
-            if reviews.length > 0:
+            if reviews.length > 0
                 div(class='recentReviews')
                         h3.reviews-header Most Recent Reviews
                         div.review-container
@@ -39,4 +39,4 @@ block content
                                             div.review-date= `${review.updatedAt.toString().slice(4,15)}`
                                         div.review-comment= `\"${review.comment}\"`
                                         div.review-rating= `${review.rating} / 10`
-    block content
+block content
