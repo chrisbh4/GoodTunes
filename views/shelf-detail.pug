@@ -32,7 +32,7 @@ block content
                     td= `${album.artist}`
                     td= `${album.releaseDate}`
                     td
-                        form(class='remove-button' action=`/shelves/remove/${album.id}` method='post')
+                        form(class='remove-button' action=`/shelves/remove/${shelf.id}/${album.id}` method='post')
                             input(type="hidden" name="_csrf" value= csrfToken)
                             button(type='submit') remove
                     td

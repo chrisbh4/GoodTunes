@@ -155,11 +155,16 @@ router.post('/own/:id(\\d+)', csrfProtection, asyncHandler(async (req, res) => {
     }
 }))
 
-router.post('/remove/:id(\\d+)', csrfProtection, asyncHandler(async (req, res) => {
-    const id = req.params.id
-    const albumList = await AlbumList.findByPk(id)
-    const shelfId = albumList.shelfId
-    const album = await Album.findByPk(albumList.albumId)
+router.post('/remove/:id(\\d+)/:albumId(\\d+)', csrfProtection, asyncHandler(async (req, res) => {
+    const shelfId = req.params.id
+    const albumId = req.params.albumId
+    const albumList = await AlbumList.findOne({
+        where: {
+            shelfId, albumId
+        }
+    })
+    console.log('+++++++++++++++++', albumList)
+    const album = await Album.findByPk(albumId)
     album.ownerCount--
     album.save()
     await albumList.destroy()
