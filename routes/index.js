@@ -19,7 +19,7 @@ router.get('/', csrfProtection, asyncHandler(async function (req, res, next) {
     include: [Album, User]
   })
   const genres = await Genre.findAll()
-  res.render('index', { title: 'GoodTunes', albums, reviews, genres, csrfToken: req.csrfToken() });
+  res.render('index', { title: 'GoodTunes', albums, reviews, genres});
 }));
 
 router.get('/test', csrfProtection, asyncHandler(async function (req, res, next) {

@@ -175,11 +175,4 @@ router.post('/listenedTo/:id(\\d+)', csrfProtection, asyncHandler(async (req, re
     res.redirect(`/shelves/${shelfId}`)
 }))
 
-router.post('/albumLists/delete/all', csrfProtection, asyncHandler(async (req, res) => {
-    const lists = await AlbumList.findAll()
-    lists.forEach(async list => {
-        await list.destroy()
-    })
-    res.redirect(`/`)
-}))
 module.exports = router

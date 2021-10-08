@@ -13,10 +13,6 @@ block head
 
 
 block content
-    div(class="bodyContainer")
-        form(action=`/shelves/albumLists/delete/all` method='post')
-            input(type="hidden" name="_csrf" value= csrfToken)
-            button(type="submit") Delete
         //- div.genres
         //-     each genre in genres
         //-         a(href=`/genres/${genre.id}`)
