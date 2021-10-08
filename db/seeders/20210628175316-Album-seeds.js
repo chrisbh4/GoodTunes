@@ -3,7 +3,7 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
    return queryInterface.bulkInsert('Albums', [
-    { title: "Legend", artist: "Bob Marley and the Wailers", genreId: 10, ownerCount: 0, releaseDate: 1984, imgSrc: "https://upload.wikimedia.org/wikipedia/en/thumb/c/c2/BobMarley-Legend.jpg/220px-BobMarley-Legend.jpg", createdAt: new Date(), updatedAt: new Date()},
+    { title: "Legend", artist: "Bob Marley and the Wailers", genreId: 1, ownerCount: 0, releaseDate: 1984, imgSrc: "https://upload.wikimedia.org/wikipedia/en/thumb/c/c2/BobMarley-Legend.jpg/220px-BobMarley-Legend.jpg", createdAt: new Date(), updatedAt: new Date()},
   //   { title: "Give Up", artist: "The Postal Service", genreId: 8, ownerCount: 0, releaseDate: 2003, imgSrc: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/PostalService_cover300dpi.jpg/800px-PostalService_cover300dpi.jpg", createdAt: new Date(), updatedAt: new Date()},
   //   { title: "OK Computer", artist: "Radiohead", genreId: 3, ownerCount: 0, releaseDate: 1997, imgSrc: "https://upload.wikimedia.org/wikipedia/en/thumb/b/ba/Radioheadokcomputer.png/220px-Radioheadokcomputer.png", createdAt: new Date(), updatedAt: new Date()},
   //   { title: "Deja Entendu", artist: "Brand New", genreId: 3, ownerCount: 0, releaseDate: 2003, imgSrc: "https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/Brand_New_Deja_Entendu.jpg/220px-Brand_New_Deja_Entendu.jpg", createdAt: new Date(), updatedAt: new Date()},

@@ -24,18 +24,19 @@ block content
                     a(href=`/albums/${album.id}`)
                         img(src=`${album.imgSrc}`)
         div(class="spacerDiv")
-            div(class='recentReviews')
-                    h3.reviews-header Most Recent Reviews
-                    div.review-container
-                        each review in reviews
-                            div.user-review
-                                div.review-img-div
-                                    a(href=`/albums/${review.Album.id}`)
-                                        img(class="reviewImg" src=`${review.Album.imgSrc}`)
-                                div.review-data
-                                    div.review-data-comment-username
-                                        div.review-username= `${review.User.username}`
-                                        div.review-date= `${review.updatedAt.toString().slice(4,15)}`
-                                    div.review-comment= `\"${review.comment}\"`
-                                    div.review-rating= `${review.rating} / 10`
+            if reviews.length > 0:
+                div(class='recentReviews')
+                        h3.reviews-header Most Recent Reviews
+                        div.review-container
+                            each review in reviews
+                                div.user-review
+                                    div.review-img-div
+                                        a(href=`/albums/${review.Album.id}`)
+                                            img(class="reviewImg" src=`${review.Album.imgSrc}`)
+                                    div.review-data
+                                        div.review-data-comment-username
+                                            div.review-username= `${review.User.username}`
+                                            div.review-date= `${review.updatedAt.toString().slice(4,15)}`
+                                        div.review-comment= `\"${review.comment}\"`
+                                        div.review-rating= `${review.rating} / 10`
     block content
