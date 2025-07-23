@@ -21,7 +21,7 @@ block content
         div(class='Albums')
             each album in albums
                 div(class="topAlbumList")
-                    a(href=`/albums/${album.id}`)
+                    a(href=`/albums/${album.discoId}`)
                         img(src=`${album.imgSrc}`)
         div(class="spacerDiv")
             if reviews.length > 0
@@ -31,7 +31,7 @@ block content
                             each review in reviews
                                 div.user-review
                                     div.review-img-div
-                                        a(href=`/albums/${review.Album.id}`)
+                                        a(href=`/albums/${review.Album.discoId}`)
                                             img(class="reviewImg" src=`${review.Album.imgSrc}`)
                                     div.review-data
                                         div.review-data-comment-username
